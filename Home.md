@@ -2,9 +2,14 @@
 
 * Network switches
   * Ethernet 1Gbe
+    * [[Dell|network/ethernet1/dell]]
+      * [[PC3548|network/ethernet1/dell/pc3548]]
+    * HP
+    * Cisco
+  * Ethernet 10Gbe
     * Dell
     * HP
-  * Ethernet 10Gbe
+    * Cisco
   * Infiniband
     * Qlogic/Intel
     * Mellanox
