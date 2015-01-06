@@ -1,4 +1,6 @@
-# Dell PowerConnect 3548 Standard Config
+# Dell PowerConnect 3548
+
+## Standard Base Configuration
 
 * Connect to the switch via serial console  (9600 baud, 0/n/1)
 * Apply power to switch
