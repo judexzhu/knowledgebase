@@ -18,12 +18,12 @@
   * Dell
     * [[Dell|pdu/dell/dell]]
   * APC
-* Server BIOS
+
+* Server
   * Dell
+    * Cseries
+      * [[c6220|server/dell/cseries/c6220]]
   * HP
 
-* Server BMC
-  * Dell
-  * HP
 
 
