@@ -2,7 +2,7 @@
 
 * Network switches
   * Ethernet 1Gbe
-    * [[Dell|network/ethernet1/dell]]
+    * Dell
       * [[PC3548|network/ethernet1/dell/pc3548]]
     * HP
     * Cisco
