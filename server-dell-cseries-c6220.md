@@ -1,6 +1,6 @@
 # Dell Power Edge C6220
 
-## Profile BASIC
+## Profile 'Cluster Slave'
 
 ### BIOS
 1. Power on and press F2 to enter BIOS, note the firmware revisions during boot
