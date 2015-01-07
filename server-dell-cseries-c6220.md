@@ -33,3 +33,11 @@ Server -> Restore on AC Power Loss -> “Always Off”
 Exit -> Save Settings and Exit
 ```
 3. Note configuration details on asset record sheet
+
+### BMC
+
+1. Configure BMC in BIOS as per BMC options in the bios configuration
+2. Configure user/password network information via ipmitool using the following parameters
+  - LAN_CHANNEL=1
+  - ADMIN_USER_ID=2
+3. NB password for user must be at least 8 characters, contain capital letters and numbers
