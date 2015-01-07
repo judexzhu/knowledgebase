@@ -1,10 +1,10 @@
 # Dell Power Edge C6220
 
-## Standard Base Configuration
+## Profile BASE
 
 ### BIOS
-* Power on and press F2 to enter BIOS, note the firmware revisions during boot
-* Enter first pass BIOS and configure the following:
+1. Power on and press F2 to enter BIOS, note the firmware revisions during boot
+2. Enter first pass BIOS and configure the following:
 ```
 Exit -> Load Optimal Defaults -> “yes”
 ```
@@ -32,4 +32,4 @@ Server -> Restore on AC Power Loss -> “Always Off”
 ```
 Exit -> Save Settings and Exit
 ```
-* Note configuration details on asset record sheet
+3. Note configuration details on asset record sheet
