@@ -103,3 +103,12 @@ Some simple rules for installing add-on cards:
  * The PCI-express riser does not ship with systems by default; order the riser if you need to fit PCI cards
  * The mez slot is mechanically different to previous Dell servers (C6100), so cards are not compatible
  * Cards in PCI and mez slots receive hot air from CPU and RAM; check PCI card tolerances before installing
+
+## Hardware support
+
+ * Call Dell on 01344-860456 with the service tag for the machine.
+ * Each C6220 in a chassis has its own service tag, and the chassis has a separate tag
+ * PSU faults can be opened against the chassis tag or a node tag
+ * [Use this](http://creativyst.com/Doc/Articles/HT/Dell/DellNumb.htm) to convert tags to express service codes
+
+Fault finding may require a DSET report to be generated. Use the latest available DSET revision, and use "RHEL6" or "RHEL7" as the OS type. DSET will not install or run properly if the LSI MegaCLI monitor is installed, so use RPM to remove this first and YUM to install it again afterwards if necessary.
