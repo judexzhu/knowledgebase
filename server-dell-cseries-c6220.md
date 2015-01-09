@@ -60,11 +60,11 @@ Other component firmware may also be required:
 
 3. Download new firmware from Dell support site. Missing versions may be available on http://poweredgec.com
 
-4A. If using the Linux update binaries, execute the BMC and BIOS update packages on the nodes. If upgrading the FCB firmware, run this ONLY from the lower-right hand node, looking from the front. The command line switches "-f -n -q" will cause the update packages to run automatically without prompting or rebooting. BMC and FCB updates take 5-10 minutes to apply, and BIOS takes around 20 seconds to install (and a reboot to apply). 
+4. If using the Linux update binaries, execute the BMC and BIOS update packages on the nodes. If upgrading the FCB firmware, run this ONLY from the lower-right hand node, looking from the front. The command line switches "-f -n -q" will cause the update packages to run automatically without prompting or rebooting. BMC and FCB updates take 5-10 minutes to apply, and BIOS takes around 20 seconds to install (and a reboot to apply). 
 
-4B. If using DOS firmware update packages, boot into DOS and run the updates one by one. You don't need to reboot after each one, but reboot at the end of the process. The DOS environment can be delivered via USB boot, or via PXE boot. 
+5. If using DOS firmware update packages, boot into DOS and run the updates one by one. You don't need to reboot after each one, but reboot at the end of the process. The DOS environment can be delivered via USB boot, or via PXE boot. 
 
-5. Each node must have power removed after doing firmware updates, and have BIOS settings reapplied. If the FCB has been upgraded, the entire chassis must be disconnected from power for at least 90 seconds. Failure to follow these suggestions will result in inconsistent behaviour, possibly many days or weeks after the updates were applied. 
+6. Each node must have power removed after doing firmware updates, and have BIOS settings reapplied. If the FCB has been upgraded, the entire chassis must be disconnected from power for at least 90 seconds. Failure to follow these suggestions will result in inconsistent behaviour, possibly many days or weeks after the updates were applied. 
 
 ### Configuring BIOS and BMC settings 
 
@@ -74,3 +74,7 @@ Dell provides tools to perform BIOS and BMC configuration settings from Linux. T
  * Use TGZ packages only; the RPM versions conflict with other packages in RHEL distributions
  * "setupbios" utility allows BIOS settings to be captured and set individually (but not reliably)
  * "bmc" utility allows BMC settings to be captured, and some options to be set (although ipmitool is generally more reliable)
+
+### RAID disks and storage
+
+The C6220 
