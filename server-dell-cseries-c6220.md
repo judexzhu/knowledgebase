@@ -89,4 +89,17 @@ The C6220 can be supplied with:
 
 The C6000 chassis can have a switchable SAS backplane installed, which can allow control over which disk drives are assigned to which of the nodes in the chassis. This is a rare option (as it's quite expensive) and can confuse customers as drive slots do not necessarily match up to the nodes you'd expect them to. The SAS zoning utility is used to configure the backplane and assign drive slots to chassis node sled slots. Requires SAS disk drives and SAS RAID cards in the C6220 servers. It is not possible to assign the same drive slot to multiple nodes. The SAS zoning tool is available on http://poweredgec.com
 
+### Compatible devices
 
+The following list of hardware is certified for installation into a C6220:
+ * Mellanox QDR and FDB, single and dual-port PCI-express and mez HCA
+ * Intel/Qlogic TrueScale QDR Infiniband PCI-express and mez HCA
+ * Intel and Broadcom, dual-port 10Gb SFP+ and 10G-baseT (copper) PCI-express and mez cards
+ * Quad-port Intel gigabit NIC 
+ * Nvidia PCI-express host interface card (HIC) for connection to external PCI chassis (C410X)
+
+Some simple rules for installing add-on cards:
+ * The PCI-express slot is low-profile, half-length. Check physical card dimensions before installing
+ * The PCI-express riser does not ship with systems by default; order the riser if you need to fit PCI cards
+ * The mez slot is mechanically different to previous Dell servers (C6100), so cards are not compatible
+ * Cards in PCI and mez slots receive hot air from CPU and RAM; check PCI card tolerances before installing
