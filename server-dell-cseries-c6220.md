@@ -1,4 +1,4 @@
-# Dell Power Edge C6220
+# Dell Power Edge C6220 (Sandy-bridge) and C6220-II (Ivy-Bridge)
 
 ## Profile 'Cluster Slave'
 
@@ -87,6 +87,6 @@ The C6220 can be supplied with:
 
 ### Disk drive zoning on C6000 chassis
 
-The C6000 chassis can have a switchable SAS backplane installed, which can allow control over which disk drives are assigned to which of the nodes in the chassis. This is a rare option (as it's quite expensive) and can confuse customers as drive slots do not necessarily match up to the nodes you'd expect them to. The SAS zoning utility is used to configure the backplane and assign drive slots to chassis node sled slots. Requires SAS disk drives and SAS RAID cards in the servers. It is not possible to assign the same drive slot to multiple nodes. The SAS zoning tool is available on http://poweredgec.com
+The C6000 chassis can have a switchable SAS backplane installed, which can allow control over which disk drives are assigned to which of the nodes in the chassis. This is a rare option (as it's quite expensive) and can confuse customers as drive slots do not necessarily match up to the nodes you'd expect them to. The SAS zoning utility is used to configure the backplane and assign drive slots to chassis node sled slots. Requires SAS disk drives and SAS RAID cards in the C6220 servers. It is not possible to assign the same drive slot to multiple nodes. The SAS zoning tool is available on http://poweredgec.com
 
 
