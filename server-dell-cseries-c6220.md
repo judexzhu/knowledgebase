@@ -77,4 +77,16 @@ Dell provides tools to perform BIOS and BMC configuration settings from Linux. T
 
 ### RAID disks and storage
 
-The C6220 
+The C6220 can be supplied with:
+
+ * No RAID controller; includes SATA disks or SSDs, or no disks at all. This configuration required no hardware setup. SAS disks are not supported without a RAID controller. 
+ * LSI 2008 SAS controller in onboard mez slot; press CTRL+C to configure in BIOS; use the mpt2sas driver and sas2ir configuration tool in Linux. Supports RAID0+1 only - see hardware asset record for RAID setup info.
+ * LSI 9260 SAS controller in PCI slot; battery must be installed on riser at sled front (reject node if battery is installed on RAID card itself, as it will overheat); press CTRL+R on startup to configure.  Supports RAID 0,1,5,6 - see hardware asset record for RAID setup info.
+ * Requires Nagios SMART disk monitor is no RAID card is installed. 
+ * Requires Nagios RAID monitor if SAS RAID card is installed. 
+
+### Disk drive zoning on C6000 chassis
+
+The C6000 chassis can have a switchable SAS backplane installed, which can allow control over which disk drives are assigned to which of the nodes in the chassis. This is a rare option (as it's quite expensive) and can confuse customers as drive slots do not necessarily match up to the nodes you'd expect them to. The SAS zoning utility is used to configure the backplane and assign drive slots to chassis node sled slots. Requires SAS disk drives and SAS RAID cards in the servers. It is not possible to assign the same drive slot to multiple nodes. The SAS zoning tool is available on http://poweredgec.com
+
+
