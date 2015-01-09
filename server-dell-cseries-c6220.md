@@ -122,3 +122,16 @@ Some simple rules for installing add-on cards:
  * Service tags are located on the rear pull handle for C6220s, and on the left hand side of the chassis for C6000
 
 Fault finding may require a DSET report to be generated. Use the latest available DSET revision, and use "RHEL6" or "RHEL7" as the OS type. DSET will not install or run properly if the LSI MegaCLI monitor is installed, so use RPM to remove this first and YUM to install it again afterwards if necessary.
+
+## Known issues
+ 
+ * Firmware upgrade tools randomly fail depending on versions used
+ * Software BIOS setting tools produce inconsistent results; nodes can lose settings when disconnected from AC
+ * Chassis FCB firmware may take several flashes before it starts working properly
+ * Disk drive LEDs do nothing (and sometimes randomly light up) if no SAS RAID controller is installed
+ * BIOS settings usually reset to defaults if firmware is upgraded
+ * Differing advice on if individual nodes can be serviced without powering down entire chassis
+ * Printing on mainboard PCB is incorrect for DIMM locations
+ * Some BMC firmware versions have a memory leak which can crash the BMC, and the node
+ * Ambient temp sensor is located under front right rack ear; can lead to false overheat warning in some racks
+ * Chassis is deep (>900mm) and will not fit in shallow racks with Infiniband cabling
