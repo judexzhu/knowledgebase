@@ -1,5 +1,14 @@
 # Dell Power Edge C6220 (Sandy-bridge) and C6220-II (Ivy-Bridge)
 
+## Hardware Overview
+
+ * One 2U C6000 chassis can support 2 x 2U high nodes or 4 x 1U high nodes
+ * Ships with two 1100, 1200 or 1400W PSUs (single PSU is not supported)
+ * Minimum of 1 node required; can ship with blanks for other node slots
+ * Nodes are dual-socket Xeon E5-2600 (C6220) or E5-2600v2 (C6220-II); supports 1 or 2 CPUs (max 135W)
+ * 16 DIMM slots; requires 1 DIMM to boot; max of 512GB RAM (16 x 32GB); slots 8-16 require CPU2 to be installed; PCB printing does not match slot enumeration - [see service manual](ftp://ftp.dell.com/Manuals/all-products/esuprt_ser_stor_net/esuprt_cloud_products/poweredge-c6220-2_Owner%27s%20Manual_en-us.pdf) for DIMM locations
+ * Chassis supports up to 12 x 6TB 3.5" disks or up to 24 x 1.2TB 2.5" disks (or SSDs)
+
 ## Profile 'Cluster Slave'
 
 ### BIOS
@@ -87,7 +96,7 @@ The C6220 can be supplied with:
 
 ### Disk drive zoning on C6000 chassis
 
-The C6000 chassis can have a switchable SAS backplane installed, which can allow control over which disk drives are assigned to which of the nodes in the chassis. This is a rare option (as it's quite expensive) and can confuse customers as drive slots do not necessarily match up to the nodes you'd expect them to. The SAS zoning utility is used to configure the backplane and assign drive slots to chassis node sled slots. Requires SAS disk drives and SAS RAID cards in the C6220 servers. It is not possible to assign the same drive slot to multiple nodes. The SAS zoning tool is available on http://poweredgec.com
+The C6000 chassis can have a switchable SAS backplane installed, which can allow control over which disk drives are assigned to which of the nodes in the chassis. This is a rare option (as it's more expensive) and can confuse customers as drive slots do not necessarily match up to the nodes you'd expect them to. The SAS zoning utility is used to configure the backplane and assign drive slots to chassis node sled slots. Requires SAS disk drives and SAS RAID cards in the C6220 servers. It is not possible to assign the same drive slot to multiple nodes. The SAS zoning tool is available on http://poweredgec.com
 
 ### Compatible devices
 
