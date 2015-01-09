@@ -36,11 +36,11 @@ Exit -> Save Settings and Exit
 
 ### BMC
 
-1. Configure BMC in BIOS as per BMC options in the bios configuration
+1. Configure BMC in BIOS as per BMC options in the BIOS configuration (above)
 2. Configure user/password network information via ipmitool using the following parameters
   - LAN_CHANNEL=1
   - ADMIN_USER_ID=2
-3. NB password for user must be at least 8 characters, contain capital letters and numbers
+3. N.B. password for user must be at least 8 characters, contain capital letters and numbers
 
 ### Upgrading firmware
 
@@ -110,5 +110,6 @@ Some simple rules for installing add-on cards:
  * Each C6220 in a chassis has its own service tag, and the chassis has a separate tag
  * PSU faults can be opened against the chassis tag or a node tag
  * [Use this](http://creativyst.com/Doc/Articles/HT/Dell/DellNumb.htm) to convert tags to express service codes
+ * Service tags are located on the rear pull handle for C6220s, and on the left hand side of the chassis for C6000
 
 Fault finding may require a DSET report to be generated. Use the latest available DSET revision, and use "RHEL6" or "RHEL7" as the OS type. DSET will not install or run properly if the LSI MegaCLI monitor is installed, so use RPM to remove this first and YUM to install it again afterwards if necessary.
