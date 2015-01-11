@@ -73,7 +73,7 @@ ADMIN_USER_ID=2
  * Linux firmware upgrade is safe for BIOS (ROM is loaded to BMC first then applied on the next reboot), but can damage the machine if a BMC or FCB firmware is interrupted. Take precautions to ensure that power will not be interrupted during firmware update procedure. 
  * All DOS firmware upgrades may damage the machine if interrupted while running. 
 
-4. Download new firmware from Dell support site. Missing versions may be available on [the Poweredge-C site] (http://poweredgec.com)
+4. Download new firmware from Dell support site. Missing versions may be available on [the Poweredge-C site](http://poweredgec.com)
 
 5. If using the Linux update binaries, execute the BMC and BIOS update packages on the nodes. If upgrading the FCB firmware, run this ONLY from the lower-right hand node, looking from the front. The command line switches `-f -n -q` will cause the update packages to run automatically without prompting or rebooting. BMC and FCB updates take 5-10 minutes to apply, and BIOS takes around 20 seconds to install (and a reboot to apply). 
 
@@ -86,7 +86,7 @@ ADMIN_USER_ID=2
 
 Dell provides tools to perform BIOS and BMC configuration settings from Linux. The tools often produce inconsistent behaviour when setting the configuration (depending on the installed firmware version), but are generally fairly reliable for reading the current settings in place from BIOS. 
 
- * Tools are available from [the Poweredge-C site] (http://poweredgec.com/)
+ * Tools are available from [the Poweredge-C site](http://poweredgec.com/)
  * Use TGZ packages only; the RPM versions conflict with other packages in RHEL distributions
  * "setupbios" utility allows BIOS settings to be captured and set individually (but not reliably)
  * "bmc" utility allows BMC settings to be captured, and some options to be set (although ipmitool is generally more reliable)
@@ -104,7 +104,7 @@ The C6220 can be supplied with:
 
 ### Disk drive zoning on C6000 chassis
 
-The C6000 chassis can have a switchable SAS backplane installed, which can allow control over which disk drives are assigned to which of the nodes in the chassis. This is a rare option (as it's more expensive) and can confuse customers as drive slots do not necessarily match up to the nodes you'd expect them to. The SAS zoning utility is used to configure the backplane and assign drive slots to chassis node sled slots. Requires SAS disk drives and SAS RAID cards in the C6220 servers. It is not possible to assign the same drive slot to multiple nodes. The SAS zoning tool is available on [the Poweredge-C site] (http://poweredgec.com)
+The C6000 chassis can have a switchable SAS backplane installed, which can allow control over which disk drives are assigned to which of the nodes in the chassis. This is a rare option (as it's more expensive) and can confuse customers as drive slots do not necessarily match up to the nodes you'd expect them to. The SAS zoning utility is used to configure the backplane and assign drive slots to chassis node sled slots. Requires SAS disk drives and SAS RAID cards in the C6220 servers. It is not possible to assign the same drive slot to multiple nodes. The SAS zoning tool is available on [the Poweredge-C site](http://poweredgec.com)
 
 ***
 ### Compatible devices
