@@ -60,7 +60,6 @@ ADMIN_USER_ID=2
  * Fan control board (FCB); once for the C6000 chassis (run the update on the 4th node - lower right sled from front)
  * Baseboard management controller (BMC); once per node
  * BIOS; once per node
-
 Other component firmware may also be required:
  * Hard disks; usually ship with recent firmware when new, but update may be needed if drives are replaced
  * NIC; usually ship with latest firmware, but may need to be updated for new features/better performance
