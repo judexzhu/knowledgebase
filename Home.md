@@ -25,6 +25,7 @@
   * Ethernet managed switches
     * Dell
       * [[PC3548|network/ethernet1/dell/pc3548]]
+      * [[PC6248|network/ethernet1/dell/pc6248]]
     * HP
     * Cisco
   * Infiniband
