@@ -1,29 +1,44 @@
-# Alces Software Hardware Configuration Quick Reference WIKI
+# Alces Software & Hardware 
+## Configuration Quick Reference WIKI
 
-* Network switches
-  * Ethernet 1Gbe
+***
+### Servers
+  * Dell
+    * C-series
+      * [[c6220|server/dell/cseries/c6220]]
+    * M-series
+    * R-series
+  * HP
+    * SL-series
+    * DL-series
+    * BL-series
+
+***
+### Storage
+  * Dell
+  * HP
+  * Panasas
+  * Seagate/Xyratex
+
+***
+### Network switches
+  * Ethernet managed switches
     * Dell
       * [[PC3548|network/ethernet1/dell/pc3548]]
-    * HP
-    * Cisco
-  * Ethernet 10Gbe
-    * Dell
     * HP
     * Cisco
   * Infiniband
     * Qlogic/Intel
     * Mellanox
 
-* PDUs
+***
+### Power distribution units
   * Dell
     * [[Dell|pdu/dell/dell]]
   * APC
-
-* Server
-  * Dell
-    * Cseries
-      * [[c6220|server/dell/cseries/c6220]]
   * HP
+
+***
 
 
 
