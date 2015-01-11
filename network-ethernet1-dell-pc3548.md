@@ -1,7 +1,9 @@
-# Dell PowerConnect 3548
+# Dell PowerConnect 3548 48-port
+## and 3524 24-port switches
 
 ## Hardware overview
 * 48-port fast-Ethernet switch with 2 x gigabit Ethernet ports
+* 24-port version is called 3524 and also has 2 x gigabit Ethernet ports
 * Single internal PSU, with DC socket for external PSU
 * Side-to-side airflow
 
