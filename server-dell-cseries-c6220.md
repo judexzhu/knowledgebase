@@ -6,8 +6,9 @@
  * Ships with two 1100, 1200 or 1400W PSUs (single PSU is not supported)
  * Minimum of 1 node required; can ship with blanks for other node slots
  * Nodes are dual-socket Xeon E5-2600 (C6220) or E5-2600v2 (C6220-II); supports 1 or 2 CPUs (max 135W)
- * 16 DIMM slots; requires 1 DIMM to boot; max of 512GB RAM (16 x 32GB); slots 8-16 require CPU2 to be installed; PCB printing does not match slot enumeration - [see service manual](ftp://ftp.dell.com/Manuals/all-products/esuprt_ser_stor_net/esuprt_cloud_products/poweredge-c6220-2_Owner%27s%20Manual_en-us.pdf) for DIMM locations
  * Chassis supports up to 12 x 6TB 3.5" disks or up to 24 x 1.2TB 2.5" disks (or SSDs)
+ * 16 DIMM slots; requires 1 DIMM to boot; max of 512GB RAM (16 x 32GB); slots 8-16 require CPU2 to be installed; PCB printing does not match slot enumeration - for DIMM locations, [see service manual](ftp://ftp.dell.com/Manuals/all-products/esuprt_ser_stor_net/esuprt_cloud_products/poweredge-c6220-2_Owner%27s%20Manual_en-us.pdf) 
+
 
 ## Profile 'Cluster Slave'
 
