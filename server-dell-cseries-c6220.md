@@ -48,14 +48,14 @@ Exit -> Save Settings and Exit
 ***
 ### BMC configuration
 
-1. Configure BMC in BIOS as per BMC options in the BIOS configuration (above)
-2. Configure user/password network information via ipmitool using the following parameters
-   ```
-   LAN_CHANNEL=1
-   ADMIN_USER_ID=2
-   ```
-3. N.B. password for user must be at least 8 characters, contain capital letters and numbers
-4. BMC serial console is connected to ttyS1 (COM2) speed 115,200 parity 8n1. 
+ 1. Configure BMC in BIOS as per BMC options in the BIOS configuration (above)
+ 2. Configure user/password network information via ipmitool using the following parameters
+``` 
+ LAN_CHANNEL=1
+ ADMIN_USER_ID=2 
+``` 
+ 3. N.B. password for user must be at least 8 characters, contain capital letters and numbers
+ 4. BMC serial console is connected to ttyS1 (COM2) speed 115,200 parity 8n1. 
 
 ***
 ### Upgrading firmware
