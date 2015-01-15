@@ -1,4 +1,4 @@
-# Dell Power Edge R630 (Haswell/Broadwell)
+# Dell Power Edge R630 (Intel Haswell/Broadwell)
 
 ## Hardware Overview
 
