@@ -23,25 +23,41 @@
 Exit -> Load Optimal Defaults -> “yes”
 ```
 ```
-Advanced -> Power Management -> “Maximum Performance”
+System settings -> Processor -> Hyperthreading/logical-core -> Off
 ```
 ```
-Advanced -> CPU Configuration -> C­States -> “Disabled”
+System settings -> Boot settings -> BIOS Boot settings -> Change boot order to 1.NIC, 2.HDD, 3.Embedded-SATA
+```
+N.B. exit this screen by pressing ENTER, not ESC (which cancels changes)
+```
+System settings -> Serial communication -> Serial Communication “On with Console Redirection via COM2”
 ```
 ```
-Advanced -> CPU Configuration -> Hyperthreading/SMT -> “off”
+System settings -> Serial communication -> Serial Port Address “Serial Device 1: COM1, Serial Device 2: COM2”
 ```
 ```
-Advanced -> CPU Configuration -> Turbo Mode -> “On”
+System settings -> Serial communication -> Redirect after boot = disabled
 ```
 ```
-Boot -> Quiet Boot -> “Disabled”
+System settings -> System profile settings -> System profile "performance"
 ```
 ```
-Server -> Set BMC LAN Configuration -> BMC LAN Port Configuration “Dedicated-NIC”
+System settings -> System security -> AC power recovery -> headnode = ON, compute node = OFF
 ```
 ```
-Server -> Restore on AC Power Loss -> “Always Off”
+System settings -> Miscellaneous Settings -> Report keyboard error = off
+```
+```
+System settings -> Miscellaneous Settings -> F1 prompt on error = disabled
+```
+```
+iDRAC menu -> Network -> Enable IPMI over LAN = enabled
+```
+```
+iDRAC menu -> Front panel security -> LCD message = user-defined
+```
+```
+iDRAC menu -> Front panel security -> User string "hostname"
 ```
 ```
 Exit -> Save Settings and Exit
@@ -52,14 +68,14 @@ Exit -> Save Settings and Exit
 # iDRAC SETTINGS TO BE CONFIRMED ***
 ### iDRAC configuration
 
- 1. Configure iDRAC in BIOS as per BMC options in the BIOS configuration (above)
+ 1. Configure iDRAC in BIOS as per iDRAC options in the BIOS configuration (above)
  2. Configure user/password network information via ipmitool using the following parameters
 ``` 
  LAN_CHANNEL=1
  ADMIN_USER_ID=2 
 ``` 
  3. N.B. password for user must be at least 8 characters, contain capital letters and numbers
- 4. BMC serial console is connected to ttyS1 (COM2) speed 115,200 parity 8n1. 
+ 4. iDRAC serial console is connected to ttyS1 (COM2) speed 115,200 parity 8n1. 
 
 ***
 ### Upgrading firmware
@@ -153,3 +169,4 @@ Fault finding may require a DSET report to be generated. Use the latest availabl
  * Older iDRAC firmware had memory leaks which caused the entire server to fail after several months of running; this is fixed in recent versions, but the bug has been reintroduced more than once in the past
  * Disks, PSUs and fans are technically hot-swappable (although difficult to reach fans when powered)
  * iDRAC processors can ship with SD cards (called Vflash) which presents as /dev/sda in Linux, causing problems installing an OS; remove these cards if installed from the rear of the chassis, or internally from both sides of the PCI slot riser closest to the PSUs
+ * IPMI sensors will fail to detect redundant PSUs properly if iDRAC is not set to "redundant" power; if this happens, login to the iDRAC using a web browser and check the power settings. Older firmware had a bug whereby PSU redundancy would change by itself after many months of running. Mode sometimes needs to be manually set to non-redundant and saved, then set back to redundant mode again before ipmi-sensors will report properly. 
