@@ -3,13 +3,13 @@
 
 ***
 ### Servers
-  * Dell
+  * Dell PowerEdge
     * C-series
       * [[c6220|server/dell/cseries/c6220]]
     * M-series
     * R-series
       * [[R630|server/dell/rseries/r630]]
-  * HP
+  * HP Proliant
     * SL-series
     * DL-series
     * BL-series
