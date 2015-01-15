@@ -24,6 +24,7 @@
 ### Network switches
   * Ethernet managed switches
     * Dell
+      * [[PC2848|network/ethernet1/dell/pc2848]]
       * [[PC3548|network/ethernet1/dell/pc3548]]
       * [[PC6248|network/ethernet1/dell/pc6248]]
     * HP
