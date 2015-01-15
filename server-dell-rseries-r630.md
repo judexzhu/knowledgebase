@@ -139,7 +139,14 @@ The R630 can be supplied with:
 ***
 ### Compatible devices
 
-The following list of hardware is certified for installation into a C6220:
+R630 always ships with one of the following NIC daughercards:
+ - 4 x 1Gb RJ45 ports, Intel or broadcom
+ - 2 x 10Gb SFP+ ports and 2 x 1Gb RJ45 ports, Intel or Broadcom
+ - 2 x 10Gb RJ45 and 2 x 1Gb RJ45 ports, Intel or Broadcome
+
+All ports can be configured for PXE and iSCSI boot, and iDRAC can share any port, on the base or a tagged VLAN. 
+
+The following list of hardware is certified for installation:
  * Mellanox QDR and FDB, single and dual-port PCI-express and mez HCA; FDR cards can be factory installed
  * Intel/Qlogic TrueScale QDR Infiniband PCI-express and mez HCA
  * Intel and Broadcom, dual-port 10Gb SFP+ and 10G-baseT (copper) PCI-express and mez cards
