@@ -3,7 +3,7 @@
 ## Hardware Overview
 
  * 1U Enterprise server
- * Ships with one or two 550W ot 750W PSU
+ * Ships with one or two 550W or 750W PSU
  * Nodes are dual-socket Xeon E5-2600v3; supports 1 or 2 CPUs (max 145W)
  * Two chassis versions; 8 x 2.5" disks with DVD, or 10 x 2.5" disks
  * Two PCI backplane versions; 
