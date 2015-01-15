@@ -8,6 +8,7 @@
       * [[c6220|server/dell/cseries/c6220]]
     * M-series
     * R-series
+      * [[R515|server/dell/rseries/r515]]
       * [[R630|server/dell/rseries/r630]]
   * HP Proliant
     * SL-series
