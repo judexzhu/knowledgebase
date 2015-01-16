@@ -8,10 +8,9 @@
 * Front-to-rear airflow (intake through RJ45 ports, exhaust over PSU)
 * Max stacking cable length of 3M (uses SFF8088 aka. mini-SAS or 6Gb-SAS connectors)
 
+
 ## Standard Base Configuration
-
-# Check config settings **
-
+![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
 * Connect to the switch via serial console  (9600 baud, 0/n/1)
 * Apply power to switch
 * Wait for the console to prompt the setup wizard, and press “Y” for yes within 60 seconds
