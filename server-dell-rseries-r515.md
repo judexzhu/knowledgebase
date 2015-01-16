@@ -2,8 +2,8 @@
 
 ## Hardware Overview
 
- * 2U Entry-level server
- * Ships with two 750W PSUs
+ * 2U Entry-level AMD-powered server
+ * All chassis ship with two 750W PSUs
  * Two chassis versions; 8 x 3.5" disks with DVD, or 12 x 3.5" disks with 2 x 2.5" disks internally
  * Both chassis include 1 x PCIeG2x8 slot and 2 x PCIeG2x4 slots, plus dedicated SAS RAID card slot
  * All three PCI slots are standard height / half-length
