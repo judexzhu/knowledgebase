@@ -62,5 +62,6 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
 
 ***
 ## Known issues
-* Only available models have port->PSU airflow, meaning that RJ45 ports should face the front of the rack 
+* It can be difficult to confirm that VLT is actually running and doing what it's supposed to be doing; test your configuration before the system ships
+* VLT *requires* a completely isolated heartbeat 
 
