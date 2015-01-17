@@ -1,15 +1,17 @@
-# Intel TrueScale 12200 switch
-## aka Qlogic TrueScale QL12200
+# Intel TrueScale 12300 and 12200 switch 
+## aka Qlogic TrueScale QL12300 and 12200
 
 ## Hardware overview
-* 36-port QDR Infiniband 1U switch
+* 36-port QDR Infiniband 1U switch (although an 18-port model called 12300-BS18 was also available)
 * Several different versions:
-  * 12200-BS01 has a single PSU, standard airflow (inlet over flat side, exhaust over ports)
-  * 12200-BS23 has dual PSUs, standard airflow (inlet over flat side, exhaust over ports)
-  * 12200-BS22 has dual PSUs and reversed airflow (inlet over ports, exhaust over flat side)
-* Available with an optional subnet management card 
-  * Part number has "-MM" tail if management card is installed; e.g. 12200-BS23-MM
-* Power supplies on Qlogic branded switches were hot-swappable, but are fixed on Intel branded ones
+  * 12300 switch has hot-swap PSUs, while 12200 model has fixed PSUs
+  * -BS01 model has a single PSU, standard airflow (inlet over flat side, exhaust over ports)
+  * -BS23 model has dual PSUs, standard airflow (inlet over flat side, exhaust over ports)
+  * -BS22 has dual PSUs and reversed airflow (inlet over ports, exhaust over flat side)
+* All 12300 models include subnet management card 
+* 12200 models available with an optional subnet management card 
+  * If 12200 part number has "-MM" tail if management card is installed; e.g. 12200-BS23-MM
+* All switches have both a serial port and an Ethernet port; Ethernet port only works if switch is managed
 * Last few Qlogic branded switches were being shipped during 2014
 
 ## Standard Base Configuration
