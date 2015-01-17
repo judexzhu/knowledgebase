@@ -22,9 +22,9 @@
 ### Storage
   * Dell
      * PowerVault series
-        [[MD34x0 SAS arrays|storage/dell/md34x0]]
-        [[MD34x0 SAS arrays|storage/dell/md34x0]]
-        [[MD3660i iSCSI array|storage/dell/md36x0i]]
+        * [[MD3060e|storage/dell/md3060e]] SAS expansion enclosure
+        * [[MD34x0|storage/dell/md34x0]] SAS arrays (MD3400, MD3420, MD3460)
+        * [[MD3660i|storage/dell/md36x0i]] iSCSI array
   * HP
   * Panasas
   * Seagate/Xyratex
