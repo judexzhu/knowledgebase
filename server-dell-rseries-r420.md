@@ -137,7 +137,7 @@ The R420 can be supplied with:
 ***
 ### Compatible devices
 
-R620 always ships with two onboard 1Gb NICs, plus optional iDRAC enterprise IPMI port. Both ports can be configured for PXE and iSCSI boot, and iDRAC can share any port, on the base or a tagged VLAN. 
+R420 always ships with two onboard 1Gb NICs, plus optional iDRAC enterprise IPMI port. Both ports can be configured for PXE and iSCSI boot, and iDRAC can share any port, on the base or a tagged VLAN. 
 
 The following list of hardware is certified for installation:
  * Mellanox QDR and FDB, single and dual-port PCI-express and mez HCA; FDR cards can be factory installed
@@ -154,7 +154,7 @@ Some simple rules for installing add-on cards:
 ## Hardware support
 
  * Call Dell on 01344-860456 with the service tag for the machine.
- * R630 asset tag is printed on a pull-out tag on the front of the chassis with a QR code
+ * R420 asset tag is printed on a pull-out tag on the front of the chassis with a QR code
  * [Use this](http://creativyst.com/Doc/Articles/HT/Dell/DellNumb.htm) to convert tags to express service codes
  
 Fault finding may require a DSET report to be generated. Use the latest available DSET revision, and use "RHEL6" or "RHEL7" as the OS type. DSET will not install or run properly if the LSI MegaCLI monitor is installed, so use RPM to remove this first and YUM to install it again afterwards if necessary.
