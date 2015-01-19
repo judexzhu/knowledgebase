@@ -23,6 +23,7 @@ System settings -> General -> Asset -> Set the system name to the name of the sw
 ```
 ```
 File Management -> Copy Files -> Copy Running Config to Startup Config
+```
 * Power down the switch, then power it back up after 60 seconds and check the settings have applied.
 
 ## **Cluster simple** profile
