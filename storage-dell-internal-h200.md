@@ -4,7 +4,7 @@
 ## Hardware Overview
  * SAS HBA card with customised Dell firmware
  * Internal cards have two 4x 6Gb SAS ports (24Gb per physical socket)
- * External cards have two 4x 6Gb SAS ports (aka. miniSAS-26 or SFF8088 connectors)
+ * External cards have two 4x 6Gb SAS ports (aka. miniSAS-26 or SFF8088 connectors) ![SFF8088](http://www.cs-electronics.com/images-large/SFF-8088-L-new.jpg)
  * LSI SAS 2008 chipset; standard LSI drivers and management tools can be used
     * H200 (internal) card usually ships with LSI-IR (integrated RAID) firmware, supporting RAID 0/1/10
     * HBA (external) card usually ships with LSI-IT (initiator/target) firmware, which doesn't support RAID
@@ -14,6 +14,7 @@
 
 ## RAID configuration
 ![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
+
 1. Press CTRL+C on boot to configure the card
 2. Setup RAID type, boot volume, etc. for the card
 3. Exit and press CTRL+ALT+DEL to reboot
