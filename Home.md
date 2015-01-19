@@ -21,6 +21,10 @@
 ***
 ### Storage
   * Dell
+     * PowerEdge RAID Controller (PERC)
+        * PERC [[H200|storage/dell/internal/h200]] and SAS HBAs
+        * PERC [[H300|storage/dell/internal/h200]] and H330
+        * PERC [[H700|storage/dell/internal/h200]], H730, H800 and H830
      * PowerVault series
         * [[MD3060e|storage/dell/md3060e]] SAS expansion enclosure
         * [[MD34x0|storage/dell/md34x0]] SAS arrays (MD3400, MD3420, MD3460)
