@@ -31,6 +31,7 @@ reload
     * Enter the netmask, IP address & gateway as provided from pre-install
     * Log into the switches GUI on your web browser with the nominated IP address. 
 
+## **Cluster simple** profile
 * In your browser connect to the IP address nominated for the switch.
 * Apply the following settings via the management GUI:
 ```
@@ -38,6 +39,27 @@ Switching -> Spanning Tree -> General Settings -> Disable Spanning Tree
 ```
 * Click the save button in the GUI (icon looks like a floppy-disk), and log out of the GUI
 * Power down the switch, then power it back up after 60 seconds and check the settings have applied.
+
+## **Cluster VLAN** profile
+![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
+ * Configuration for modern clusters and private clouds
+ * Rapid spanning-tree (RSTP) enabled plus default VLANs:
+    *  VLAN1 = hardware mgt (BMC, switch interface, etc.)
+    *  VLAN2 = private network (blue)
+    *  VLAN3 = software mgt / build network (PXE boot, ganglia, nagios)
+    *  VLAN4 = DMZ network
+    *  VLAN5 = customer external network	
+
+ * Connect to the switch management GUI via the IP address set above
+```
+Switching -> Spanning Tree -> General Settings -> Enable Rapid Spanning Tree
+```
+```
+File Management -> Copy Files -> Copy Running Config to Startup Config
+```
+* Power down the switch, then power it back up after 60 seconds and check the settings have applied.
+
+## **Saving switch details
 * Record details on customer asset sheet
  - Asset Tag / Serial Number
  - Firmware revision
