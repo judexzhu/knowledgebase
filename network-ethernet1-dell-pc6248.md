@@ -23,14 +23,43 @@
 System settings -> General -> Asset -> Set the system name to the name of the switch
 ```
 ```
+File Management -> Copy Files -> Copy Running Config to Startup Config
+```
+* Power down the switch, then power it back up after 60 seconds and check the settings have applied.
+
+## **Cluster simple** profile
+![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
+ * Basic setup, no VLANs
+ * Connect to the switch management GUI via the IP address set above
+```
 Switching -> Spanning Tree -> General Settings -> Disable Spanning Tree
 ```
 ```
 File Management -> Copy Files -> Copy Running Config to Startup Config
 ```
-
 * Power down the switch, then power it back up after 60 seconds and check the settings have applied.
 
+## **Cluster VLAN** profile
+![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
+ * Configuration for modern clusters and private clouds
+ * Rapid spanning-tree (RSTP) enabled plus default VLANs:
+    *  VLAN1 = hardware mgt (BMC, switch interface, etc.)
+    *  VLAN2 = private network (blue)
+    *  VLAN3 = software mgt / build network (PXE boot, ganglia, nagios)
+    *  VLAN4 = DMZ network
+    *  VLAN5 = customer external network	
+
+ * Connect to the switch management GUI via the IP address set above
+```
+Switching -> Spanning Tree -> General Settings -> Enable Rapid Spanning Tree
+```
+```
+File Management -> Copy Files -> Copy Running Config to Startup Config
+```
+* Power down the switch, then power it back up after 60 seconds and check the settings have applied.
+
+
+## Saving switch details
 * Record details on customer asset sheet
  - Asset Tag / Serial Number
  - Firmware revision
