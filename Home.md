@@ -42,7 +42,7 @@
     * Cisco
   * Infiniband
     * Qlogic/Intel
-      * [[QL12200|network/infinibandQ/intel/12200]]
+      * [[(QL)12200 and 12300|network/infinibandQ/intel/12200]]
     * Mellanox
 
 ***
