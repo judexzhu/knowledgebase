@@ -10,17 +10,17 @@
 
 
 ## Standard Base Configuration
-![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
 * Connect to the switch via serial console  (9600 baud, 0/n/1)
 * Apply power to switch
 * Wait for the console to prompt the setup wizard, and press “Y” for yes within 60 seconds
 * When prompted to setup SNMP, press No
 * When prompted, press Yes to configure IP address, Subnet Mask and Gateway – use as provided by preinstall or otherwise instructed for the cluster
 * When prompted, set the username to “admin” and the password to the supplied cluster admin/IPMI password
-* In your browser connect to the IP address nominated for the switch.
+* Reset the switch as the management interface won't come up until after a full reboot at this point. 
+* After the reboot is complete, In your browser connect to the IP address nominated for the switch.
 * Apply the following settings via the management GUI:
 ```
-System settings -> General -> Asset -> Set the system name to the name of the switch
+System settings -> General -> System Information -> Set the system name to the name of the switch
 ```
 ```
 File Management -> Copy Files -> Copy Running Config to Startup Config
@@ -28,11 +28,10 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
 * Power down the switch, then power it back up after 60 seconds and check the settings have applied.
 
 ## **Cluster simple** profile
-![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
  * Basic setup, no VLANs
  * Connect to the switch management GUI via the IP address set above
 ```
-Switching -> Spanning Tree -> General Settings -> Disable Spanning Tree
+Switching -> Spanning Tree -> Global Settings -> Disable Spanning Tree
 ```
 ```
 File Management -> Copy Files -> Copy Running Config to Startup Config
@@ -52,7 +51,7 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
 
  * Connect to the switch management GUI via the IP address set above
 ```
-Switching -> Spanning Tree -> General Settings -> Enable Rapid Spanning Tree
+Switching -> Spanning Tree -> Global Settings -> Enable Rapid Spanning Tree
 ```
 ```
 File Management -> Copy Files -> Copy Running Config to Startup Config
