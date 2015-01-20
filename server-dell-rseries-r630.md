@@ -13,20 +13,20 @@
  * Ships with iDRAC8 express (shared IPMI LAN port, no KVM-over-IP) or iDRAC enterprise with dedicated port
 
 ## Profile 'Cluster Slave'
-![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
-# *** BIOS SETTINGS TO BE CONFIRMED ***
-***
 ### BIOS configuration
-1. Power on and press F2 to enter BIOS, note the firmware revisions during boot
-2. Enter first pass BIOS and configure the following:
+1. Power on and press F2 to enter "System Setup"
+2. Enter System BIOS and configure the following:
 ```
-Exit -> Load Optimal Defaults -> “yes”
-```
-```
-System settings -> Processor -> Hyperthreading/logical-core -> Off
+Press Default Button - Confirm to Load Default Settings -> “yes”
 ```
 ```
-System settings -> Boot settings -> BIOS Boot settings -> Change boot order to 1.NIC, 2.HDD, 3.Embedded-SATA
+System Information -> Note down Firmware Revisions for BIOS
+```
+```
+Processor Settings -> Logical Processor (HyperThreading) -> Disabled 
+```
+```
+Boot settings -> Boot Option Sequence -> Change boot order to 1.NIC, 2.HDD
 ```
 N.B. exit this screen by pressing ENTER, not ESC (which cancels changes)
 ```
@@ -42,13 +42,16 @@ System settings -> Serial communication -> Redirect after boot = disabled
 System settings -> System profile settings -> System profile "performance"
 ```
 ```
-System settings -> System security -> AC power recovery -> headnode = ON, compute node = OFF
-```
-```
-System settings -> Miscellaneous Settings -> Report keyboard error = off
+System settings -> System security -> AC power recovery -> OFF
 ```
 ```
 System settings -> Miscellaneous Settings -> F1 prompt on error = disabled
+```
+```
+Press Finish Button -> Save Changes
+```
+```
+iDRAC menu -> Note iDRAC (BMC) Version Numbers on Main Page
 ```
 ```
 iDRAC menu -> Network -> Enable IPMI over LAN = enabled
