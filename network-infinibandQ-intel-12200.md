@@ -14,7 +14,7 @@
 * All switches have both a serial port and an Ethernet port; Ethernet port only works if switch is managed
 * Last few Qlogic branded switches were being shipped during 2014
 
-## Standard Base Configuration
+## Standard Base Configuration profile: 'Cluster Basic'
 
 ### Unmanaged switches
 * No configuration required (or possible)
