@@ -37,6 +37,10 @@ setDefaultRoute -h <ipaddress>
 ```
 setSystemName
 ```
+* Set the username and password (default old password: adminpass)
+```
+passwd 
+```
 * Power down the switch, then power it back up after 60 seconds and check the settings have applied.
 * Record details on customer asset sheet
  - Asset Tag / Serial Number
