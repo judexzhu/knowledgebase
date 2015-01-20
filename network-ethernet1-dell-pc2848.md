@@ -35,9 +35,11 @@ reload
 * In your browser connect to the IP address nominated for the switch.
 * Apply the following settings via the management GUI:
 ```
-Switching -> Spanning Tree -> General Settings -> Disable Spanning Tree
+Switching -> Spanning Tree -> Global Settings -> Disable Spanning Tree
 ```
-* Click the save button in the GUI (icon looks like a floppy-disk), and log out of the GUI
+```
+File Management -> Copy Files -> Copy Running Config to Startup Config
+```
 * Power down the switch, then power it back up after 60 seconds and check the settings have applied.
 
 ## **Cluster VLAN** profile
@@ -52,7 +54,7 @@ Switching -> Spanning Tree -> General Settings -> Disable Spanning Tree
 
  * Connect to the switch management GUI via the IP address set above
 ```
-Switching -> Spanning Tree -> General Settings -> Enable Rapid Spanning Tree
+Switching -> Spanning Tree -> Global Settings -> Enable Rapid Spanning Tree
 ```
 ```
 File Management -> Copy Files -> Copy Running Config to Startup Config
