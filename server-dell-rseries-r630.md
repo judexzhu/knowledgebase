@@ -68,8 +68,6 @@ Exit -> Save Settings and Exit
 3. Note configuration details on asset record sheet
 
 ***
-![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
-# *** iDRAC SETTINGS TO BE CONFIRMED ***
 ### iDRAC configuration
 
  1. Configure iDRAC in BIOS as per iDRAC options in the BIOS configuration (above)
