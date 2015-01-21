@@ -1,4 +1,4 @@
-# Extended Fabric Burn-In Tests for Nodes.
+# Extended Testing - Basic Fabric Burn-In Tests for Nodes.
 
 This page gives a brief description of what burn-in tests should be run on nodes that have an Interconnect Card:
 
