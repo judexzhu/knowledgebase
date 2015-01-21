@@ -1,2 +1,1 @@
-```
-Standard Burn-In Tests for Compute Nodes.
+**Standard Burn-In Tests for Compute Nodes.
