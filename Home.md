@@ -69,4 +69,5 @@
    * [[Memtester|Burn-In-Tests:-Memtester]]
    * [[HPL|Burn-In-Tests:-HPL]]
    * [[IOZone|Burn-In-Tests:-IOZone]]
-
+   * [[IMB|Burn-In-Tests:-IMB]]
+   * [[GPUBurn|Burn-In-Tests:-GPUBurn]]
