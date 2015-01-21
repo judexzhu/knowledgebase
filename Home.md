@@ -65,5 +65,7 @@
   * Basic fabric burn-in
     * [[Profile:Extended|burnin/fabric/basic]]
 
+##### Hardware burn-in tests
+   * [Memtester]
 
 
