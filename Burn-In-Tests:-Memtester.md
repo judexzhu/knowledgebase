@@ -7,7 +7,7 @@ Memtester is a utility for testing the memory of a node, it is run one process p
 * Ensure that the System BMC has reported no errors during running - you can use `service ipmi start && ipmitool -c sel elist` to view any reported errors from the BMC.
 * Ensure that no errors have been reported by the Operating System - you can use `egrep -i "hardware|error|mce|machine"` to discount most errors that will be thrown by the OS for memory related errors.
 
-Memtester Job Script:
+Memtester Example Job Script:
 ```
 #!/bin/bash
 #$ -N Memtest -pe smp 16
