@@ -54,7 +54,7 @@ HPL Scripts - Example shown for 16 core, 64GB node:
 # jobscript to run HPL benchmark
 
 # Export environment and merge+set output file
-#$ -j y  -N HPL-1node -o /users/alces-cluster/hpl/1-node/results/HPL.$JOB_ID
+#$ -j y -N HPL-1node -o /users/alces-cluster/hpl/1-node/results/HPL.$JOB_ID
 
 # Request MPI-verbose PE 
 #$ -pe mpinodes-verbose 1 -cwd -V 
@@ -107,7 +107,11 @@ HPL.out      output file name (if any)
 IMB Script:
 ```
 #!/bin/bash
-#$ -V -pe mpinodes 2 -j y -cwd -o ~alces-cluster/imb/results/imb_out.$JOB_ID
+# Export environment and merge+set output file
+#$ -j y -N IMB-2nodes -o ~alces-cluster/imb/results/imb_out.$JOB_ID
+
+# Request Parallel Environment.
+#$ -pe mpinodes-verbose 2 -cwd -V
 
 module load mpi/openmpi
 module load apps/imb
