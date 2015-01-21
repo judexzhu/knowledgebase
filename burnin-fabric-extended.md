@@ -1,0 +1,1 @@
+* Run single round of HPL across nodes in configuration group (max size 32 nodes) using Interconnect. [[HPL|Burn-In-Tests:-HPL]]
