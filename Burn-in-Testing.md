@@ -47,7 +47,7 @@ For Compute Nodes with nVidia GPGPU Cards - additionally:
 * Check /var/log/messages for any errors reported by the Operating System.
 * Check the System Event Log for any reported errors.
 
-HPL Scripts - Example shown for 16 core, 64GB node:
+HPL Scripts - Example shown for 16 core, 64GB node with no IB Interconnect.
 
 ```
 #!/bin/bash
