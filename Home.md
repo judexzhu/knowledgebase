@@ -1,6 +1,6 @@
-# Alces Software & Hardware 
-## Configuration Quick Reference WIKI
+# Alces Software Knowledgebase
 
+## Hardware
 ***
 ### Servers
   * Dell PowerEdge
@@ -57,6 +57,10 @@
   * HP
 
 ***
+### Hardware burn-in testing
+  * Basic server burn-in
+  * Extended server burn-in
+  * Basic fabric burn-in
 
 
 
