@@ -112,5 +112,5 @@ IMB Script:
 module load mpi/openmpi
 module load apps/imb
 
-# You can force the MPI to use a different Interconnect by changing the btl_if_include to the name of a different interconnect.
+# Force the MPI to use a different Interconnect by changing the btl_if_include to the name of another device.
 mpirun --mca btl tcp --mca btl_tcp_if_include ib0 -np 2 -npernode 1 IMB-MPI1
