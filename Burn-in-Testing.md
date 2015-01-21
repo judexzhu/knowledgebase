@@ -103,3 +103,14 @@ HPL.out      output file name (if any)
 0            Equilibration (0=no,1=yes)
 8            memory alignment in double (> 0)
 ```
+
+IMB Script:
+```
+#!/bin/bash
+#$ -V -pe mpinodes 2 -j y -cwd -o ~alces-cluster/imb/results/imb_out.$JOB_ID
+
+module load mpi/openmpi
+module load apps/imb
+
+# You can force the MPI to use a different Interconnect by changing the btl_if_include to the name of a different interconnect.
+mpirun --mca btl tcp --mca btl_tcp_if_include ib0 -np 2 -npernode 1 IMB-MPI1
