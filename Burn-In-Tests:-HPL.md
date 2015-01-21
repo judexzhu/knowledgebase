@@ -1,4 +1,6 @@
-High Performance Linpack (HPL) is a synthetic benchmark, designed to solve a large mathematical problem on computers - including those with Distributed Memory, such as those within a cluster. It solves the problem in Double-Precision (64bit) arithmetic, which quickly stresses the Floating Point unit of a CPU along with the Memory subsystem and will normally show any problems with a node quite quickly. When run across multiple nodes via an interconnect, it is useful for showing up errors on the fabric as poor performance will be exhibited and often accompanied with reported errors.
+High Performance Linpack (HPL) is a synthetic benchmark, designed to solve a large mathematical problem on computers - including those with Distributed Memory, such as those within a cluster. 
+
+It solves the problem in Double-Precision (64bit) arithmetic, which quickly stresses the Floating Point unit of a CPU along with the Memory subsystem and will normally show any problems with a node quite quickly. When run across multiple nodes via an interconnect, it is useful for showing up errors on the fabric as poor performance will be exhibited and often accompanied with reported errors.
 
 ### Notes for running HPL
 * Ensure that all System Event Logs are clear before commencing running of Memtester - you can use `service ipmi start && ipmitool -c 'sel clear'` to clear these logs.
