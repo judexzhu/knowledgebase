@@ -63,7 +63,9 @@
   * Extended server burn-in
     * [[Profile:Extended|burnin/server/extended]]
   * Basic fabric burn-in
-    * [[Profile:Extended|burnin/fabric/basic]]
+    * [[Profile:Fabric-Basic|burnin/fabric/basic]]
+  * Extended fabric burn-in
+    * [[Profile:Fabric-Extended|burnin-fabric-extended]]
 
 ##### Hardware burn-in test documentation
    * [[Memtester|Burn-In-Tests:-Memtester]]
