@@ -35,3 +35,14 @@ For Compute Nodes with nVidia GPGPU Cards - additionally:
 * Calculate the correct settings for the HPL.dat file with the HPL Calculator at http://hpl-calculator.sourceforge.net/ - Recommended settings are an NB size of 192 and a Memory usage of 88%.
 * Use a Grid Shape (PxQ) with as close to "square" as possible, making Q slightly larger than P.
 * For systems using an MPI version of 1.8.x or higher, ensure that the `mpirun` line includes the "--bind-to-core" parameter.
+* Use the `ibcheckerrors` and `ibclearerrors` to ensure that there are no issues with the fabric reported before and after running the tests.
+
+### Notes for running iozone on System Disks
+* Ensure you run iozone on the disk with the biggest partition.
+* Check /var/log/messages for errors with the SATA bus and/or read/write errors.
+
+### Notes for running Intel MPI Benchmark (IMB) 
+* Use the `ibcheckerrors` and `ibclearerrors` to ensure that there are no issues with the fabric reported before running the tests.
+* Run the IMB Benchmark one pair of nodes at a time to confirm MPI latency is as expected.
+* Check /var/log/messages for any errors reported by the Operating System.
+* Check the System Event Log for any reported errors.
