@@ -1,4 +1,4 @@
-High Performance Linpack (HPL) is a synthetic benchmark, designed to solve a large mathematical problem on computers - including those with Distributed Memory, such as those within a cluster. 
+High Performance Linpack (HPL) is a synthetic benchmark, designed to solve a large mathematical problem on computers - including those with Distributed Memory, such as those within a cluster. It can be run on a single node to check performance and stress only that node. It can also be run over multiple nodes via an interconnect such as Infiniband or Ethernet - some of the steps below are only applicable to certain Interconnects.
 
 It solves the problem in Double-Precision (64bit) arithmetic, which quickly stresses the Floating Point unit of a CPU along with the Memory subsystem and will normally show any hardware problems with a node quite quickly. When run across multiple nodes via an interconnect, it is useful for showing up errors on the fabric as poor performance will be exhibited and often accompanied with reported errors.
 
