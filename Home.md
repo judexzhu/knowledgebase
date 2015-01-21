@@ -59,8 +59,11 @@
 ***
 ### Hardware burn-in testing
   * Basic server burn-in
+    * [[Profile:Basic|burnin/server/basic]]
   * Extended server burn-in
+    * [[Profile:Extended|burnin/server/extended]]
   * Basic fabric burn-in
+    * [[Profile:Extended|burnin/fabric/basic]]
 
 
 
