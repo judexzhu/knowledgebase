@@ -119,3 +119,16 @@ module load apps/imb
 # Force the MPI to use a different Interconnect by changing the btl_if_include to the name of another device.
 mpirun --mca btl tcp --mca btl_tcp_if_include ib0 -np 2 -npernode 1 IMB-MPI1
 ```
+
+IOZone Script:
+```
+#!/bin/bash
+#$ -pe smp 16
+#$ -j y -o /users/alces-cluster/iozone/results/iozone.out.$JOB_ID
+
+module load apps/iozone
+cd /tmp
+echo hostname is $HOSTNAME
+iozone -a -s 8G -i0 -r 1M -d.
+```
+
