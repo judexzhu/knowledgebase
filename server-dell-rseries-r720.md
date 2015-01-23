@@ -128,8 +128,8 @@ Dell provides tools to perform BIOS and BMC configuration settings from Linux. T
 
 The R720 can be supplied with:
 
- * [H710|adapters/raid/dell/h710]
- * [H810|adapters/raid/dell/h810]
+ * [[H710|adapters/raid/dell/h710]]
+ * [[H810|adapters/raid/dell/h810]]
 
 ***
 ## Hardware support
