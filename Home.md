@@ -41,6 +41,7 @@
       * [[PC3548|network/ethernet1/dell/pc3548]]
       * [[PC6248|network/ethernet1/dell/pc6248]]
       * [[N2048|network/ethernet1/dell/n2048]]
+      * [[N4032|network/ethernet1/dell/n4032]]
       * [[S6000|network/ethernet1/dell/S6000]]
     * HP
     * Cisco
