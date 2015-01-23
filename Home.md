@@ -12,7 +12,7 @@
       * [[R430|server/dell/rseries/r430]]
       * [[R515|server/dell/rseries/r515]]
       * [[R630|server/dell/rseries/r630]]
-      * [[R730|server/dell/rseries/r730]]
+      * [[R720|server/dell/rseries/r720]]
   * HP Proliant
     * SL-series
     * DL-series
