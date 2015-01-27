@@ -37,9 +37,7 @@ reload
 ```
 Switching -> Spanning Tree -> Global Settings -> Disable Spanning Tree
 ```
-```
-File Management -> Copy Files -> Copy Running Config to Startup Config
-```
+* To save the configuration, log out of the web GUI, then log in again and check the settings, then log out again. 
 * Power down the switch, then power it back up after 60 seconds and check the settings have applied.
 
 ## **Cluster VLAN** profile
@@ -58,14 +56,12 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
 ```
 Switching -> Spanning Tree -> Global Settings -> Enable Rapid Spanning Tree
 ```
-```
-File Management -> Copy Files -> Copy Running Config to Startup Config
-```
+* To save the configuration, log out of the web GUI, then log in again and check the settings, then log out again. 
 * Power down the switch, then power it back up after 60 seconds and check the settings have applied.
 
 ## Saving switch details
 * Record details on customer asset sheet
- - Asset Tag / Serial Number
+ - Asset Tag / Serial Number (printed on switch, or use the GUI)
  - Firmware revision
  - Name
  - IP Details of management interface
@@ -89,5 +85,6 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
 ## Known issues
 * Pressing the "manage" may reset all managed switch settings when switch is returned to unmanaged mode. If you had VLANs and spanning-tree configured, this could cause other network switches to fail if they are not expecting your switch to return to default settings. 
 * The switch does not support redundant PSUs; they can however be deployed with APC automatic transfer switches to power them from two separate supplies
-* The switch management GUI makes it difficult to tell when settings have been saved
+* The switch management GUI makes it difficult to tell when settings have been saved; you need to logout and back in again to trigger the switch auto-save for configuration changes - there is no GUI command to save settings
 * The CLI/console provides very few useful commands; the command "show tech-support" can be used on the command-line to show the default configuration, and serial numbers
+* In "MANAGED" mode, the switch supports very limited VLAN options; all ports are forced into "GENERAL" mode, and there is no "ACCESS" or "TRUNKED" port modes. It should be possible to emulate all port modes, but read the Dell setup guide carefully for more complicated configurations.
