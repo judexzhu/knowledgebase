@@ -52,7 +52,7 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
     *  VLAN4 = DMZ network (name: dmz)
     *  VLAN5 = customer external network (name: external)
  * Switching -> VLAN -> Port Settings
-    * Configure all ports to be Access ports in VLAN3 (software mgt)	
+    * Configure all ports to be General ports untagged in VLAN3 only (software mgt)	
 
 * Connect to the switch management GUI via the IP address set above
 ```
