@@ -41,6 +41,7 @@ Switching -> Spanning Tree -> Global Settings -> Disable Spanning Tree
 * Power down the switch, then power it back up after 60 seconds and check the settings have applied.
 
 ## **Cluster VLAN** profile
+![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
  * Configuration for modern clusters and private clouds
  * Rapid spanning-tree (RSTP) enabled
  * Switching -> VLAN -> Vlan Membership: 'Add' the following vlans VLANs:
