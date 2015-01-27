@@ -68,6 +68,50 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
 
 ***
 
+```
+- run through prompted setup first	
+- instructions assume non-stacked switches; for stacked switches, repeat port settings for all ports on ALL stacked switches	
+	<connect to serial console>
+x	enable
+	configure
+	spanning-tree
+	spanning-tree mode RSTP
+	hostname <hostname of switch>
+	vlan database
+	vlan 2 name private
+	vlan 3 name swmgt
+	vlan 4 name dmz
+	vlan 5 name external
+	end
+	interface vlan 1
+	name hwmgt
+	ip address <ip-address> <network>
+	end
+	show vlan
+	<check that all vlans are created and all ports are in VLAN1>
+configure trunk port	configure
+	interface <trunk-port>
+	switchport mode trunk
+	switchport trunk allowed vlan all
+	end
+	
+	
+	
+	configure
+remember to skip trunk ports	interface range gi1/0/1-48
+	switchport mode general
+	switchport general pvid 3
+	switchport general allowed vlan add 3 untagged
+	exit
+remember to skip trunk ports	interface range te1/0/1-2
+	switchport mode general
+	switchport general pvid 3
+	switchport general allowed vlan add 3 untagged
+	exit
+	
+	copy running-config startup-config
+```
+
 ## Firmware update
 ![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
 * Switches usually ship on latest firmware. 
