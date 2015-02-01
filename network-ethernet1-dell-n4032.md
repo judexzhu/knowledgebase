@@ -1,10 +1,25 @@
-# Dell PowerConnect S4032F 10Gb switch
+# Dell PowerConnect N-4000 series 10Gb switches
 
 ## Hardware overview
-* 24-port 10Gb Ethernet 1U switch with dual PSU
-* Each 40Gb port can be split into 4 x 10Gb ports, providing 144 x 10Gb ports in total
-* Available with dual PSU
+* Four different switches available
+   * 24-port switches N4032 (24 x copper 10GbaseT) and N4032F (24 x 10Gb SFP+ ports)
+   * 48-port switches N4064 (48 x copper 10GbaseT) and N4064F (48 x 10Gb SFP+ ports)
+   * 48-port switches both have 2 x 40Gb QSFP ports onboard (24-port switches don't)
+* Switch supports one module available at extra cost; modules provide ONE option of:
+   * 4-port 10Gb SFP+
+   * 4-port 10Gb 10GbaseT copper RJ45
+   * 2-port 40Gb QSFP
+* Each 40Gb port can be split into 4 x 10Gb ports, providing up to 8 extra ports
+   * This is why 24-port switches are called N4032, and 48-port switches are called N4064
+   * Use Dell 40Gb->4x10Gb splitter cables to create 10Gb ports
+   * Dell cables provide 10Gb SFP+ ports only
+* Dedicated serial and 100baseT console ports, on PSU side of switch
+* Ships in most countries by default with dual PSUs
 * Front-to-rear airflow (intake through RJ45 ports, exhaust over PSU), with reverse airflow PSUs available
+* Supports user-configurable stacking over standard ports (10Gb or 40Gb)
+* Does NOT support Dell/Force10 VLT feature (as this switch does not run FTOS); but does support MLAG across stack
+* Readyrail kit must be purchased separately; default rack-ears mounting causes brackets to deform
+* Switch has standard Dell getting-started wizard, and graphical management web interface
 
 ## Standard Base Configuration (all profiles)
 * Connect to the switch via serial console  (9600 baud, 8/n/1)
@@ -68,50 +83,6 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
 
 ***
 
-```
-- run through prompted setup first	
-- instructions assume non-stacked switches; for stacked switches, repeat port settings for all ports on ALL stacked switches	
-	<connect to serial console>
-x	enable
-	configure
-	spanning-tree
-	spanning-tree mode RSTP
-	hostname <hostname of switch>
-	vlan database
-	vlan 2 name private
-	vlan 3 name swmgt
-	vlan 4 name dmz
-	vlan 5 name external
-	end
-	interface vlan 1
-	name hwmgt
-	ip address <ip-address> <network>
-	end
-	show vlan
-	<check that all vlans are created and all ports are in VLAN1>
-configure trunk port	configure
-	interface <trunk-port>
-	switchport mode trunk
-	switchport trunk allowed vlan all
-	end
-	
-	
-	
-	configure
-remember to skip trunk ports	interface range gi1/0/1-48
-	switchport mode general
-	switchport general pvid 3
-	switchport general allowed vlan add 3 untagged
-	exit
-remember to skip trunk ports	interface range te1/0/1-2
-	switchport mode general
-	switchport general pvid 3
-	switchport general allowed vlan add 3 untagged
-	exit
-	
-	copy running-config startup-config
-```
-
 ## Firmware update
 ![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
 * Switches usually ship on latest firmware. 
@@ -124,3 +95,10 @@ remember to skip trunk ports	interface range te1/0/1-2
 * Call Dell on 01344-860456 with the service tag for the machine.
 * Each switch has its own service tag, printed on rear side (by PSUs)
 * [Use this](http://creativyst.com/Doc/Articles/HT/Dell/DellNumb.htm) to convert tags to express service codes
+
+
+***
+## Known issues
+* Switch management GUI causes untidy CLI configs to be generated; e.g. changing a port's VLAN mode from GENERAL to ACCESS will leave all the GENERAL configuration lines in the text config, which makes it hard to read
+* Switch is heavy and will deform rack ears if installed without ReadyRails kit; these must be ordered separately
+* Switch does not support VLT; use MLAG instead with stacking between switches
