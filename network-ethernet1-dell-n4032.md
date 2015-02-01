@@ -54,23 +54,27 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
 ## **Cluster VLAN** profile
  * Configuration for modern clusters and private clouds
  * Rapid spanning-tree (RSTP) enabled
- * Switching -> VLAN -> Vlan Membership: 'Add' the following vlans VLANs:
-    *  VLAN1 = hardware mgt (BMC, switch interface, etc.) (name: hwmgt/default)
-    *  VLAN2 = private network (blue) (name: private) 
-    *  VLAN3 = software mgt / build network (PXE boot, ganglia, nagios) (name: swmgt)
-    *  VLAN4 = DMZ network (name: dmz)
-    *  VLAN5 = customer external network (name: external)
- * Switching -> VLAN -> Port Settings
-    * Configure all ports to be General ports unltagged in VLAN3 only (software mgt)	
+ * Five VLANs configured for different types of data:
+    *  VLAN1 = hardware mgt (BMC, switch interface, etc.)
+    *  VLAN2 = private network (blue)
+    *  VLAN3 = software mgt / build network (PXE boot, ganglia, nagios)
+    *  VLAN4 = DMZ network 
+    *  VLAN5 = customer external network 
 
- * Connect to the switch management GUI via the IP address set above
+ * To configure the switch, access the command-line interface (via serial console or via telnet)
+ * Login using the "admin" account created in basic setup
+ * Enter privileged mode, and set the switch hostname ("coresw1" in the example below):
 ```
-Switching -> Spanning Tree -> Global Settings -> Enable Rapid Spanning Tree
+enable
+configure
+hostname "coresw1"
 ```
-```
-File Management -> Copy Files -> Copy Running Config to Startup Config
-```
-* Power down the switch, then power it back up after 60 seconds and check the settings have applied.
+
+
+
+ 
+
+
 
 ## Saving switch details
 * Record details on customer asset sheet
