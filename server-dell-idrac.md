@@ -22,23 +22,43 @@ Swap: 33554424k total,        0k used, 33554424k free,   215336k cached
 
 The process for fixing this is as follows:
 1. Disable GridEngine Queue `qmod -d *@node00`
+
 2. Wait until node responds to `power node00 status`
+
 3. Logon to node and run `shutdown -h 1` and wait.
+
 4. Node probably will not turn off by itself and will probably require the power to be forced off - use the `power node00 off` command.
+
 5. Wait 2 minutes and ensure that the node has turned off by using `power node00 status`
+
 6. Power node back on with `power node00 on` and wait for node to boot. Note that using the `reset` power option will not fix the state!
+
 7. Wait for node to boot, login to the node and start a `screen` session.
+
 8. Run the BMC Firmware Update Utility - usually named something like `ESM_Firmware_3F4WV_LN_1.66.65_A00.BIN`
+
 9. Wait for update to complete
+
 10. Reboot node
+
 11. Connect to node serial console `console node00`
+
 12. Ensure that System Lifecycle Controller is not in "Recovery" status and causing boot errors.
+
 13. Wait for node to restart
+
 14. SSH to node and open `screen` session.
+
 15. Run BIOS update utility - usually named something like `BIOS-xxxxx.BIN`
+
 16. Allow system to Reboot
+
 17. Reconnect to console after node has started rebooting 
+
 18. Ensure Flash completes
+
 19. Ensure Lifecycle Controller is still not in Recovery status and causing boot problems.
+
 20. Ensure BIOS & BMC revisions are correct in `dmidecode` and by starting IPMI service and running `ipmitool mc info`
+
 21. Re-enable queues on node `qmod -e *@node00`
