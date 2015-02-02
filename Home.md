@@ -13,6 +13,7 @@
       * [[R515|server/dell/rseries/r515]]
       * [[R630|server/dell/rseries/r630]]
       * [[R720|server/dell/rseries/r720]]
+    * Integrated Dell Remote Access Controller ([[iDRAC|server/dell/idrac]])
   * HP Proliant
     * SL-series
     * DL-series
