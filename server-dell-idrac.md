@@ -21,6 +21,7 @@ Swap: 33554424k total,        0k used, 33554424k free,   215336k cached
 ```
 
 The process for fixing this is as follows:
+
 1. Disable GridEngine Queue `qmod -d *@node00`
 
 2. Wait until node responds to `power node00 status`
