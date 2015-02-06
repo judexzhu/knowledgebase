@@ -40,7 +40,8 @@
     * Dell
       * [[PC2848|network/ethernet1/dell/pc2848]] 1Gb switch
       * [[PC3548|network/ethernet1/dell/pc3548]] 100baseT switch
-      * [[PC6248|network/ethernet1/dell/pc6248]] 1Gb switch
+      * [[PC5548|network/ethernet1/dell/pc5548]] 1Gb switch with 10Gb ports
+      * [[PC6248|network/ethernet1/dell/pc6248]] 1Gb switch with module slots
       * [[N2000 series|network/ethernet1/dell/n2048]] 1Gb Ethernet switches
       * [[N4000 series|network/ethernet1/dell/n4032]] 10Gb Ethernet switches
       * [[S6000|network/ethernet1/dell/S6000]] 40Gb Ethernet switch
