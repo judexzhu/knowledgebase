@@ -50,8 +50,66 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
 
  * To configure, first complete the standard base configuration steps, as shown above
  * Next, connect via telnet to the IP address set in the steps above
- 
-###########more steps here
+ * Enter privileged mode, then enter configuration mode, then set the hostname (here "accsw1"); 
+```
+enable
+configure
+hostname "accsw1"
+```
+ * Create and name all five VLANs
+```
+interface vlan 1
+ name hwmgt
+ exit
+interface vlan 2
+ name private
+ exit
+interface vlan 3
+ name swmgt
+ exit
+interface vlan 4
+ name dmz
+ exit
+interface vlan 5
+ name external
+ exit
+```
+ * Setup all gigabit ports as untagged on VLAN3 (commands shown here are for the 48-port N2048 switch); remember to setup the 10Gb ports as well if you're going to use them 
+```
+interface range gi1/0/1-48
+switchport mode general
+switchport general allowed vlan add 3 untagged
+switchport general pvid 3
+spanning-tree portfast
+exit
+interface range te1/0/1-2
+switchport mode general
+switchport general allowed vlan add 3 untagged
+switchport general pvid 3
+spanning-tree portfast
+exit
+```
+ * For ports connected to servers, add VLAN2; repeat the commands below for all required ports (shown here for port 1)
+```
+interface gi1/0/1
+switchport general allowed vlan add 2 tagged
+exit
+```
+ * For any management servers that need access to VLAN1, 4 or 5, add these VLANs as required; commands shown below adds VLAN1 to port 2
+``` 
+interface gi1/0/2
+switchport general allow vlan add 1 tagged
+exit
+```
+ * Identify the uplink port used to connect to other switches; this port must be configured with standard spanning-tree (NOT portfast), and tagged in all VLANs. This may a 1Gb or a 10Gb port - the configuration below is for the first 10Gb port. 
+```
+interface te1/0/1
+switchport mode general
+switchport general allowed vlan add 1-2,4-5 tagged
+switchport general allowed vlan add 3 untagged
+switchport general pvid 3
+exit
+```
 
 ## Saving switch details
 * Record details on customer asset sheet
