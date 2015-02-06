@@ -42,6 +42,7 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
 
 ## **Cluster simple** profile
  * Basic setup, no VLANs
+ * First, setup the switch as shown above
  * Connect to the switch management GUI via the IP address set above
 ```
 Switching -> Spanning Tree -> Global Settings -> Disable Spanning Tree
@@ -61,6 +62,7 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
     *  VLAN4 = DMZ network 
     *  VLAN5 = customer external network 
 
+ * First, setup the switch with the standard base configuration as shown above
  * To configure the switch, access the command-line interface (via serial console or via telnet)
  * Login using the "admin" account created in basic setup
  * Enter privileged mode, and set the switch hostname ("coresw1" in the example below):
@@ -69,12 +71,61 @@ enable
 configure
 hostname "coresw1"
 ```
-
-
-
- 
-
-
+ * Create and setup the five VLANs
+```
+vlan 2
+name "private"
+exit
+vlan 3
+name "swmgt"
+exit
+vlan 4
+name "dmz"
+exit
+vlan 5
+name "external"
+exit
+```
+ * Configure all ports as general ports, untagged in VLAN3 only, with port-fast enabled for hosts to connect
+ * Note these commands are for a 24-port switch with no modules - the "range" command must include all ports if you have modules installed, or have a 48-port switch
+```
+interface range Te1/0/1-24
+spanning-tree portfast
+switchport mode general
+switchport general pvid 3
+switchport general allowed vlan add 3
+switchport general allowed vlan remove 1
+exit
+```
+ * Identify any ports which will be connected to servers; these need to access VLAN2. Add tagged VLAN2 to their ports
+ * Note commands below configure 10Gb port 1 only; repeat these commands for each port you want to configure
+```
+interface Te1/0/1
+switchport general allowed vlan add 2 tagged
+exit
+```
+ * Identify any ports that will be connected to management servers, which need access to VLAN1. Add tagged VLAN1 to their ports
+ * Note commands below configure 10Gb port 1 only; repeat these commands for each port you want to configure
+```
+interface Te1/0/1
+switchport general allowed vlan add 1 tagged
+exit
+```
+ * Identify any ports which will be used to connect to other switches
+ * These ports must be configured as untagged on VLAN3, and tagged on all other VLANs
+ * Spanning-tree must be enabled in rstp mode, not portfast mode
+ * Note that the commands below configure 10Gb port 24; repeat these commands for other ports to be connected to other switches
+```
+interface Te1/0/24
+spanning-tree rstp
+switchport mode general
+switchport general pvid 3
+switchport general allowed vlan add 3
+switchport general allowed vlan add 2,4-5 tagged
+switchport general allowed vlan add 1 tagged
+switchport access vlan 3
+exit
+```
 
 ## Saving switch details
 * Record details on customer asset sheet
