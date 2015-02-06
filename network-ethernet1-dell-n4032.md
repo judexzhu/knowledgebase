@@ -126,6 +126,11 @@ switchport general allowed vlan add 1 tagged
 switchport access vlan 3
 exit
 ```
+ * When done configuring, save the configuration
+```
+end
+copy running-config startup-config
+```
 
 ## Saving switch details
 * Record details on customer asset sheet
