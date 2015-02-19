@@ -117,4 +117,5 @@ File Management -> Copy Files -> Copy Running Config to Startup Config
 * It can be difficult to confirm that VLT is actually running and doing what it's supposed to be doing; test your configuration before the system ships
 * VLT *requires* a completely isolated heartbeat network
 * 8 of the 40Gb ports CANNOT be split into 4x10Gb ports; they are 4,12,20,28,100,108,116,124. The switch ports a maximum of 96 x 10Gb ports and 8 x 40Gb ports. 
+* Converting a 40Gb port to 4x10Gb ports (or back again) requires the switch to be rebooted. During the first reboot after converting a port, the switch will report errors loading the existing configuration in again - these errors go away the next time the switch reboots. Any port configuration is lost when you convert a port. 
 
