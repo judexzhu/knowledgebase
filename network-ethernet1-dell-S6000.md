@@ -2,28 +2,52 @@
 
 ## Hardware overview
 * 36-port 40Gb Ethernet 1U switch with dual PSU
-* Each 40Gb port can be split into 4 x 10Gb ports, providing 144 x 10Gb ports in total
+* All but 8 of the 40Gb ports can be split into 4 x 10Gb ports, providing 96 x 10Gb and 8 x 40Gb ports in total
 * Ships with dual PSU as standard
 * Front-to-rear airflow (intake through RJ45 ports, exhaust over PSU), with reverse airflow PSUs available
 * Runs FTOS (Force10-OS), which supports virtual-link trunking to improve over standard spanning-tree
 
 ## Standard Base Configuration
-![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
 * Connect to the switch via serial console  (9600 baud, 0/n/1)
 * Apply power to switch
-* Wait for the console to prompt the setup wizard, and press “Y” for yes within 60 seconds
-* When prompted to setup SNMP, press No
-* When prompted, press Yes to configure IP address, Subnet Mask and Gateway – use as provided by preinstall or otherwise instructed for the cluster
-* When prompted, set the username to “admin” and the password to the supplied cluster admin/IPMI password
-* In your browser connect to the IP address nominated for the switch.
-
-* Apply the following settings via the management GUI:
+* Wait for the switch to boot; takes about 2 minutes
+* Configure the hostname ("coresw1" in the example below), disable jumpstart boot, save and reboot the switch
 ```
-System settings -> General -> Asset -> Set the system name to the name of the switch
+enable
+configure
+hostname coresw1
+end
+reload-type normal-reload
+write mem
+reload
 ```
+* Wait for the switch to reboot again
+* At login prompt, check that the hostname is now set
+* Set a password and enable password, setup management IP on dedicated port, enable syslog logging
 ```
-File Management -> Copy Files -> Copy Running Config to Startup Config
+enable
+configure
+username admin password ******** priv 15
+enable password ********
+interface ma 0/0
+ip address 10.111.0.100 255.255.0.0
+no shutdown
+exit
+logging 10.111.254.1
+end
+write mem
 ```
+* You may want to convert some 40Gb ports into 10Gb ports. You can do this to any ports except the 4 top-right and 4 top-left ports, which must always be 40Gb (4,12,20,28,100,108,116,124). 
+* Enter the following command to switch a 40Gb port into 4 x 10Gb ports (configuring port 16 in the example below)
+```
+enable
+configure
+stack-unit 0 port 16 portmode quad
+end
+write mem
+```
+* You will need to reboot the switch (use the `reload` command) to change a 40Gb port to 4x10Gb
+* Any existing port config is lost when you change modes; when the switch next boots, you'll see error messages when loading the config, which you can ignore. These errors won't be shown the next time the switch boots. 
 * Power down the switch, then power it back up after 60 seconds and check the settings have applied.
 
 ## **Cluster simple** profile
