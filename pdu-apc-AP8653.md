@@ -1,4 +1,4 @@
-# APC AP8653 Zero-U single-phase PDU
+# APC AP8653 single-phase PDU
 
 ## Standard Base Configuration
 
@@ -13,8 +13,8 @@
 ```
 Browse to: Configuration -> Security -> Local Users -> Management
 ```
-```
--> Add new user: admin / clusteradminpass, select "Administrator" security level
+``` 
+Add new user: admin / clusteradminpass, select "Administrator" security level
 ```
 ```
 Select 'apc' SuperUser and set password to cluster admin password
