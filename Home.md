@@ -58,6 +58,7 @@
   * Dell
     * [[Dell|pdu/dell/dell]]
   * APC
+    * [[APC|pdu/apc/AP8653]]
   * HP
 
 ***
