@@ -23,7 +23,7 @@ Select 'apc' SuperUser and set password to cluster admin password
 After ensuring that the newly created 'admin' account is accessible with the correct privileges, disable the 'apc' user account - then disable 'device' and 'readonly' accounts.
 ```
 ```
-Configuration -> TCP/IP -> IPV4 Configuration -> Assign IP for PDU and set Subnet Mask and Gateway
+Configuration -> TCP/IP -> IPV4 Configuration -> Set to Manual mode and assign IP for PDU and set Subnet Mask and Gateway
 ```
 ```
 Configuration -> General -> Identification -> Set correct name and location for PDU (e.g. pduB1 / rackA)
