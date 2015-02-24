@@ -1,4 +1,4 @@
-# APC AP8653 single-phase PDU
+# APC AP8653 switched 0U single-phase PDU
 
 ## Standard Base Configuration
 
