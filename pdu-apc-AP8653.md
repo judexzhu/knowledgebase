@@ -20,7 +20,7 @@ Add new user: admin / clusteradminpass, select "Administrator" security level
 Select 'apc' SuperUser and set password to cluster admin password
 ```
 ```
-After ensuring that the newly created 'admin' account is accessible with the correct privileges, disable the 'apc' user account - then disable 'device' and 'readonly' accounts.
+After ensuring that the newly created 'admin' account is accessible with the correct privileges, disable the 'apc' user account - then delete the 'device' and 'readonly' accounts.
 ```
 ```
 Configuration -> TCP/IP -> IPV4 Configuration -> Set to Manual mode and assign IP for PDU and set Subnet Mask and Gateway
