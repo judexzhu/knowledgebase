@@ -31,8 +31,6 @@ Configuration -> General -> Identification -> Set correct name and location for 
 ```
 Configuration -> General -> Date and Time -> Mode -> Set date and timezone to correct location and set time.
 ```
-```
-
 
 * Plug desired network cable back into PDU, reset PDU and check settings have been applied correctly
 * Note PDU details / configuration on a generic customer asset sheet
