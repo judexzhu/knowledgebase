@@ -34,3 +34,12 @@ Configuration -> General -> Date and Time -> Mode -> Set date and timezone to co
 
 * Plug desired network cable back into PDU, reset PDU and check settings have been applied correctly
 * Note PDU details / configuration on a generic customer asset sheet
+
+
+## Fixing broken hardware
+
+* Call APC on 0800-279-9254
+* Provide the company name, PDU model and serial number
+* Describe fault and trouble-shooting steps
+* Replacement units take 3-5 days if in stock
+* Faulty units collected after new unit is received
