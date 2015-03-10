@@ -19,7 +19,7 @@ A typical example setup of user groups:
 
 `clusterusers - all regular users and administrators`
 
-The `admins` user group exists by default. GID can be set with the --GID=STR if specific IDs are required. To add the recommended user groups:
+The `admins` user group exists by default. GID can be set with the `--GID=STR` if specific IDs are required. To add the recommended user groups:
 ```
 ipa group-add siteadmins --desc="site admins"
 ipa group-add cluster-users --desc="cluster users"
