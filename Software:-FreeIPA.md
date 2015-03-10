@@ -9,13 +9,14 @@
 
 ## Configurations
 ### Set administrator restrictions
-**Pre-requisites**
- * Installed IPA server
 
 For sites that wish to give privileged users access to control user and group membership, but restrict access to the administrator user and groups from modification and deletion. 
 A typical example setup of user groups: 
+
 `admins - system administrators; full system access`
+
 `siteadmins - privileged user accounts; set permissions as deemed necessary`
+
 `clusterusers - all regular users and administrators`
 
 The `admins` user group exists by default. GID can be set with the --GID=STR if specific IDs are required. To add the recommended user groups:
