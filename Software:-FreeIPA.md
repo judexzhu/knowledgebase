@@ -3,7 +3,7 @@
 ## Overview
 
  * Provides user authorisation and authentication
- ** Ability to talk to site AD/LDAP servers
+ * Ability to talk to site AD/LDAP servers
  * DNS management
  * Sudo rule management 
 
