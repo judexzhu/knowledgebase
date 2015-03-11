@@ -34,7 +34,7 @@ ipa group-add-member cluster-users --users=fflinstone,wflinstone,ggazoo
 ipa group-add-member siteadmins --users=wflinstone
 ```
 
-Add a role for the `siteadmins` usergroup
+Add a role for the `siteadmins` usergroup. Each role contains configurable amount of privileges available to a designated user or group. 
 ```
 [root@ipa ~]# ipa role-add --desc="site admins" siteadmin
 ----------------------
@@ -45,6 +45,7 @@ Added role "siteadmin"
 ```
 
 (not finished; requires additional privileges adding)
+
 Add the required privileges to the `siteadmin` role previously created. Privileges can be viewed with the `ipa privilege-find` command.
 ```
 [root@ipa ~]# ipa role-add-privilege --privileges="Modify Group membership" siteadmin
