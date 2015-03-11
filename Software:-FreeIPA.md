@@ -56,6 +56,13 @@ Number of privileges added 1
 ----------------------------
 ```
 
+Add more privileges for privileged users + administrators, e.g. group administration. Privileges can be searched with `ipa privilege-find KEYWORD`
+```
+ipa role-add-privilege --privileges="Group Administrators" siteadmin
+ipa role-add-privilege --privileges="Password Policy Administrator" siteadmin
+ipa role-add-privilege --privileges="User Administrators" siteadmin
+```
+
 Verify restriction on `admins` usergroup by logging in as a test member of the `siteadmins` group
 ```
 [root@ipa ~]# kinit ggazoo
