@@ -15,14 +15,14 @@ A typical example setup of user groups:
 
 `admins - system administrators; full system access`
 
-`siteadmins - privileged user accounts; set permissions as deemed necessary`
+`AdminUsers - privileged user accounts; set permissions as deemed necessary`
 
-`clusterusers - all regular users and administrators`
+`ClusterUsers - all regular users and administrators`
 
-The `admins` user group exists by default. GID can be set with the `--GID=STR` if specific IDs are required. To add the recommended user groups:
+The `admins` user group exists by default. GID can be set with the `--GID=STR` if specific IDs are required. If not previously done so, add the recommended user groups:
 ```
-ipa group-add siteadmins --desc="site admins"
-ipa group-add cluster-users --desc="cluster users"
+ipa group-add AdminUsers --desc="site admins"
+ipa group-add ClusterUsers --desc="cluster users"
 ```
 
 Add or import users and assign them to their appropriate groups
@@ -30,26 +30,26 @@ Add or import users and assign them to their appropriate groups
 ipa user-add --first=fred --last=flinstone --email=fred.flinstone@bedrock.net
 ipa user-add --first=wilma --last=flinstone --email=wilma.flinstone@bedrock.net
 ipa user-add --first=great --last=gazoo --email=great.gazoo@bedrock.net
-ipa group-add-member cluster-users --users=fflinstone,wflinstone,ggazoo
-ipa group-add-member siteadmins --users=wflinstone
+ipa group-add-member ClusterUsers --users=fflinstone,wflinstone,ggazoo
+ipa group-add-member AdminUsers --users=wflinstone
 ```
 
-Add a role for the `siteadmins` usergroup. Each role contains configurable amount of privileges available to a designated user or group. 
+Add a role for the `AdminUsers` usergroup. Each role contains configurable amount of privileges available to a designated user or group. 
 ```
-[root@ipa ~]# ipa role-add --desc="site admins" siteadmin
+[root@ipa ~]# ipa role-add --desc="site admins" AdminUsers
 ----------------------
-Added role "siteadmin"
+Added role "AdminUsers"
 ----------------------
-  Role name: siteadmin
+  Role name: AdminUsers
   Description: site admins
 ```
 
 (not finished; requires additional privileges adding)
 
-Add the required privileges to the `siteadmin` role previously created. Privileges can be viewed with the `ipa privilege-find` command.
+Add the required privileges to the `AdminUsers` role previously created. Privileges can be viewed with the `ipa privilege-find` command.
 ```
-[root@ipa ~]# ipa role-add-privilege --privileges="Modify Group membership" siteadmin
-  Role name: siteadmin
+[root@ipa ~]# ipa role-add-privilege --privileges="Modify Group membership" AdminUsers
+  Role name: AdminUsers
   Description: site admins
   Privileges: Modify Group membership
 ----------------------------
@@ -59,12 +59,12 @@ Number of privileges added 1
 
 Add more privileges for privileged users + administrators, e.g. group administration. Privileges can be searched with `ipa privilege-find KEYWORD`
 ```
-ipa role-add-privilege --privileges="Group Administrators" siteadmin
-ipa role-add-privilege --privileges="Password Policy Administrator" siteadmin
-ipa role-add-privilege --privileges="User Administrators" siteadmin
+ipa role-add-privilege --privileges="Group Administrators" AdminUsers
+ipa role-add-privilege --privileges="Password Policy Administrator" AdminUsers
+ipa role-add-privilege --privileges="User Administrators" AdminUsers
 ```
 
-Verify restriction on `admins` usergroup by logging in as a test member of the `siteadmins` group
+Verify restriction on `admins` usergroup by logging in as a test member of the `AdminUsers` group
 ```
 [root@ipa ~]# kinit ggazoo
 Password for ggazoo@BEDROCK.NET:
@@ -75,7 +75,7 @@ Enter it again:
 ipa: ERROR: Insufficient access: Insufficient 'delete' privilege to delete the entry 'uid=admin,cn=users,cn=accounts,dc=bedrock,dc=net’.
 ```
 
-Verify `siteadmins` cannot place themselves or the `siteadmins` group into the `admins` group
+Verify `AdminUsers` cannot place themselves or the `AdminUsers` group into the `admins` group
 ```
 [root@ipa ~]# kinit ggazoo
 Password for ggazoo@BEDROCK.NET:
@@ -90,14 +90,14 @@ Password for ggazoo@BEDROCK.NET:
 -------------------------
 Number of members added 0
 -------------------------
-[root@ipa ~]# ipa group-add-member admins --groups=siteadmins
+[root@ipa ~]# ipa group-add-member admins --groups=AdminUsers
   Group name: admins
   Description: Account administrators group
   GID: 1834400000
   Member users: admin, wflinstone
   Failed members:
     member user:
-    member group: siteadmins: Insufficient access: Insufficient 'write' privilege to the 'member' attribute of entry 'cn=admins,cn=groups,cn=accounts,dc=bedrock,dc=net'.
+    member group: AdminUsers: Insufficient access: Insufficient 'write' privilege to the 'member' attribute of entry 'cn=admins,cn=groups,cn=accounts,dc=bedrock,dc=net'.
 -------------------------
 Number of members added 0
 -------------------------
