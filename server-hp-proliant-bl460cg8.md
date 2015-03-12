@@ -10,74 +10,63 @@
  * 24 DIMM slots; requires 1 DIMM to boot; max of 768GB RAM (24 x 32GB); slots 8-16 require CPU2 to be installed; DIMM slot enumeration printed on chassis lid underside and matches PCB printing 
  * Ships with iLO by default (can take iLO software license upgrades)
 
-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT
-
 ## Profile 'Cluster Slave'
+
+### RAID disk configuration
+If your node has RAID disks, follow these instructions to configure them:
+1. Power on the node with a VGA screen and keyboard attached.
+2. At P220 RAID card prompt, press F8 to configure
+3. Delete any logical drives configured. 
+4. Create a new logical drive; select RAID0 or RAID10 for the two disks
+5. Choose "select boot volume" from the RAID card main menu
+6. Select LUN0 (the logical drive created in step 4)
+7. Press ESC at the main menu to exit
+
+N.B. If you have created a new logical drive, you will need to power cycle the node before you can select it in the BIOS boot order. 
+
 ### BIOS configuration
-1. Power on and press F2 to enter "System Setup"
-2. Enter System BIOS and configure the following:
-```
-Press Default Button - Confirm to Load Default Settings -> “yes”
-```
-```
-System Information -> Note down Firmware Revisions for BIOS
-```
-```
-Processor Settings -> Logical Processor (HyperThreading) -> Disabled 
-```
-```
-Boot settings -> Boot Option Sequence -> Change boot order to 1.NIC, 2.HDD
-```
-N.B. exit this screen by pressing ENTER, not ESC (which cancels changes)
-```
-System settings -> Serial communication -> Serial Communication “On with Console Redirection via COM2”
-```
-```
-System settings -> Serial communication -> Serial Port Address “Serial Device 1: COM1, Serial Device 2: COM2”
-```
-```
-System settings -> Serial communication -> Redirect after boot = disabled
-```
-```
-System settings -> System profile settings -> System profile "performance"
-```
-```
-System settings -> System security -> AC power recovery -> OFF
-```
-```
-System settings -> Miscellaneous Settings -> F1 prompt on error = disabled
-```
-```
-Press Finish Button -> Save Changes
-```
-```
-iDRAC menu -> Note iDRAC (BMC) Version Numbers on Main Page
-```
-```
-iDRAC menu -> Network -> Enable IPMI over LAN = enabled
-```
-```
-iDRAC menu -> Front panel security -> LCD message = user-defined
-```
-```
-iDRAC menu -> Front panel security -> User string "hostname"
-```
-```
-Exit -> Save Settings and Exit
-```
-3. Note configuration details on asset record sheet
 
-***
-### iDRAC configuration
-
- 1. Configure iDRAC in BIOS as per iDRAC options in the BIOS configuration (above)
- 2. Configure user/password network information via ipmitool using the following parameters
-``` 
- LAN_CHANNEL=1
- ADMIN_USER_ID=2 
-``` 
- 3. N.B. password for user must be at least 8 characters, contain capital letters and numbers
- 4. iDRAC serial console is connected to ttyS1 (COM2) speed 115,200 parity 8n1. 
+1. Power on the blade with VGA screen and keyboard attached
+2. Press F9 to enter system setup
+3. Enter System BIOS and configure the following:
+```
+System Default menu -> System default options: Confirm
+```
+The node will reboot automatically. 
+4. As the node boots again, press F9 again to enter BIOS settings.
+5. At the BIOS configuration screen, make these settings:
+```
+System Information -> Note down Firmware Revisions for BIOS and serial number for the blade
+```
+```
+System options -> Processor options -> Intel HT Options -> Disable hyperthreading
+```
+```
+System options -> Embedded NICs -> NIC2 boot options -> Select "Network boot PXE"
+```
+```
+System options -> Serial port options -> Virtual serial port -> COM2
+```
+```
+System options -> BIOS serial console & EMS -> Port -> COM2
+System options -> BIOS serial console & EMS -> Baud -> 115200
+System options -> BIOS serial console & EMS -> EMS -> COM2
+```
+```
+Power Management -> HP Power Profile -> Select "Maximum performance"
+```
+```
+Standard Boot Order (IPL) -> 1st option -> NIC1
+Standard Boot Order (IPL) -> 2nd option -> P220i RAID volume C:
+```
+```
+Server availability -> ASR status -> disabled
+```
+```
+Server availability -> Automatic power on -> disabled
+```
+6. Press ESC to exit and save changes
+7. Note configuration details on asset record sheet
 
 ***
 ### Upgrading firmware
