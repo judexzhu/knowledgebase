@@ -55,5 +55,5 @@ The following steps can be used to restore the HP C7000 Chassis and its blade se
 ## Known issues
 
 * Chassis cannot properly control what blades do when AC power is first applied. Some blades allow you set this in the "Server availability" menu, but some blades have had this option removed. At least two different blades have had firmware releases which have incorrectly hidden this function, meaning that there is no way to prevent these blades from powering-on when power is first applied to the chassis.
-* It can be difficult to work out which interconnect slot switches need to be in in order to be connected to the correct mez card on blades. Refer to the blade documentation for assistance, and use the green Ethernet link lights on the front of the blades to help identify the correct slot. 
+* It can be difficult to work out which interconnect slot switches need to be in to be connected to the correct mez card on blades. Refer to the blade documentation for assistance, and use the green Ethernet link lights on the front of the blades to help identify the correct slot. 
 * Some switches do not allow bios-devname support to complete properly in RHEL6 (although this seems to work fine with RHEL7). 
