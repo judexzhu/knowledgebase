@@ -1,5 +1,19 @@
 # HP C7000 Blade Enclosure
 
+## Configuring a new chassis
+
+* Unpack chassis and install into rack
+* Install all blades, switches and onboard administrator (OA) modules before powering up
+* Note down the OA password, which is printed on the bottom of the OA itself when you eject it from the chassis
+* Power on the chassis; wait for it to boot. New blades are usually set to power-on by default. 
+* Use the chassis LCD screen and controls to set the IP address of the OA(s)
+* Connect a laptop with a browser to the OA network port
+* Browse to the chassis IP address
+* Use username "Administrator" and the password printed on the OA module you're connecting to
+* Once logged in, select "First installation" wizard from the drop-down menu
+* Follow the instructions to configure the chassis
+
+
 ## Resetting OA Password
 
 If the OA password has been lost or forgotten, the password can be reset using the following method:
@@ -37,3 +51,9 @@ The following steps can be used to restore the HP C7000 Chassis and its blade se
 * Answer `YES`
 * The process will take approximately 4 minutes
 * Once the chassis has reset, the chassis is ready for configuration via the GUI at https://10.11.0.5 etc.
+
+## Known issues
+
+* Chassis cannot properly control what blades do when AC power is first applied. Some blades allow you set this in the "Server availability" menu, but some blades have had this option removed. At least two different blades have had firmware releases which have incorrectly hidden this function, meaning that there is no way to prevent these blades from powering-on when power is first applied to the chassis.
+* It can be difficult to work out which interconnect slot switches need to be in in order to be connected to the correct mez card on blades. Refer to the blade documentation for assistance, and use the green Ethernet link lights on the front of the blades to help identify the correct slot. 
+* Some switches do not allow bios-devname support to complete properly in RHEL6 (although this seems to work fine with RHEL7). 
