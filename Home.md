@@ -5,7 +5,8 @@
 ### Servers
   * Dell PowerEdge
     * C-series
-      * [[c6220|server/dell/cseries/c6220]]
+      * [[C6220|server/dell/cseries/c6220]]
+      * [[C4230|server/dell/cseries/c4230]]
     * M-series
     * R-series
       * [[R420|server/dell/rseries/r420]]
