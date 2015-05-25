@@ -52,15 +52,15 @@ Standard Boot Order (IPL) -> 2nd option -> P220i RAID volume C:
 ```
 Server availability -> ASR status -> disabled
 ```
-```
+
  6. Press ESC to exit and save changes
  7. Note configuration details on asset record sheet
  8. Unlike the G8 blades, the G9s no longer have a BIOS option to control how blades behave when first inserted into a chassis (or what happens when a chassis first has A/C power applied). This must be set in the iLO for each blade separately:
- * Navigate to the OA for the chassis and click the blade you want to configure
- * Select the iLO for the blade, and wait for your browser to login
- * Select "Power Settings" from the main menu
- * Select "AC power state" and choose to power-on or stay-off when A/C power is applied
- * Click the "apply" button to save settings.
+    * Navigate to the OA for the chassis and click the blade you want to configure
+    * Select the iLO for the blade, and wait for your browser to login
+    * Select "Power Settings" from the main menu
+    * Select "AC power state" and choose to power-on or stay-off when A/C power is applied
+    * Click the "apply" button to save settings.
 ***
 
 ## Hardware support
