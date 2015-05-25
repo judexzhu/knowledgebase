@@ -18,6 +18,8 @@
   * HP Proliant
     * SL-series
     * DL-series
+      * [[DL360G9|server/hp/proliant/dl360g9]]
+      * [[DL380G9|server/hp/proliant/dl380g9]]
     * BL-series
       * [[C7000|server/hp/proliant/c7000]] 10U Blade chassis
       * [[BL460cG8|server/hp/proliant/bl460cg8]]
