@@ -11,8 +11,6 @@
  * Ships with iDRAC7 express (shared IPMI LAN port, no KVM-over-IP) or iDRAC7 enterprise with dedicated port
 
 ## Profile 'Cluster Slave'
-![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
-# *** BIOS SETTINGS TO BE CONFIRMED ***
 ***
 ### BIOS configuration
 1. Power on and press F2 to enter BIOS, note the firmware revisions during boot
@@ -63,8 +61,6 @@ Exit -> Save Settings and Exit
 3. Note configuration details on asset record sheet
 
 ***
-![draft](http://upload.wikimedia.org/wikipedia/commons/f/ff/DRAFT_ICON.png)
-# *** iDRAC SETTINGS TO BE CONFIRMED ***
 ### iDRAC configuration
 
  1. Configure iDRAC in BIOS as per iDRAC options in the BIOS configuration (above)
