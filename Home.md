@@ -88,3 +88,6 @@
 
 ### User management
    * [[FreeIPA|Software:-FreeIPA]]
+
+### Operating System
+   * [[OpenStack ready images|Software:-OpenStackImages]]
