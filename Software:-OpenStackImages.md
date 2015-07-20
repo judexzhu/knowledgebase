@@ -5,9 +5,11 @@
  * Guide to building various OpenStack ready images
 
 ## Requirements
+ * Any RHEL/Fedora build with cloud-utils cloud-init cloud-utils-growpart installed 
 
 ## CentOS 
 ### 6.6 
+
 
 ### 7.1 
 
