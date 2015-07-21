@@ -32,7 +32,7 @@ yum install -y epel-release cloud-init cloud-utils git parted
 ```
 yum install -y epel-release cloud-init cloud-utils git parted gnome-desktop \
 gnome-panel nautilus xorg-x11-xinit urw-fonts izo libyaml curl fold mktemp tar crontab tmux \
-stat gzip base64 tail xauth xlsclients xterm perl ntp xorg-x11-server-utils sysstat xorg-x11-fonts-misc \
+stat gzip base64 tail xauth xlsclients xterm perl ntp xorg-x11-server-utils sysstat xorg-x11-fonts-misc 
 ```
 
 + Edit `/boot/grub/menu.lst` and append the following to the kernel line to allow console access through the OpenStack Horizon dashboard
@@ -80,7 +80,11 @@ glance image-create --name centos6.6-alces --file centos6.6.final.qcow2 --contai
 
 + Run the following to start the install, pulling from public mirrors: 
 ```
-virt-install --connect=qemu:///system --network=bridge:virbr0 --extra-args="console=tty0 console=ttyS0,115200 serial rd_NO_PLYMOUTH" --name=ubuntu1404 --disk path=/var/lib/libvirt/images/ubuntu1404.qcow2,format=qcow2,size=10,cache=none --ram 8192 --vcpus 6 --check-cpu --accelerate --os-type linux --location=http://archive.ubuntu.com/ubuntu/dists/trusty-updates/main/installer-amd64/ --nographics
+virt-install --connect=qemu:///system --network=bridge:virbr0 \
+--extra-args="console=tty0 console=ttyS0,115200 serial rd_NO_PLYMOUTH" \ 
+--name=ubuntu1404 --disk path=/var/lib/libvirt/images/ubuntu1404.qcow2,format=qcow2,size=10,cache=none \
+--ram 8192 --vcpus 6 --check-cpu --accelerate --os-type linux \
+--location=http://archive.ubuntu.com/ubuntu/dists/trusty-updates/main/installer-amd64/ --nographics
 ```
 
 + Follow the installation over console using text mode, when installation is complete log in using the previously set password and prepare the image for use with Alces Portal and OpenStack
