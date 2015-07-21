@@ -88,6 +88,7 @@ virt-install --connect=qemu:///system --network=bridge:virbr0 \
 ```
 
 + Follow the installation over console using text mode, when installation is complete log in using the previously set password and prepare the image for use with Alces Portal and OpenStack
+
 #### Basic OpenStack ready image
 ```
 apt-get install -y cloud-init cloud-utils cloud-utils-growpart
