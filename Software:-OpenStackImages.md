@@ -21,6 +21,17 @@ virt-install --connect=qemu:///system --network=bridge:virbr0 \
 --location=http://mirror.i3d.net/pub/centos/6/os/x86_64/ --nographics
 ```
 
+Follow the installation over console using text mode, when installation is complete log in using the previously set password and prepare the image for use with Alces Portal and OpenStack
+
+```
+yum install -y epel-release cloud-init cloud-utils cloud-utils-growpart
+```
+
+Edit `/boot/grub/menu.lst` and append the following to the kernel line to allow console access through the OpenStack Horizon dashboard
+```
+console=tty0 console=ttyS0,115200n8
+```
+
 ### 7.1 
 
 ## Ubuntu
