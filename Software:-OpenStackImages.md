@@ -25,7 +25,7 @@ virt-install --connect=qemu:///system --network=bridge:virbr0 \
 
 #### Basic OpenStack ready image
 ```
-yum install -y epel-release cloud-init cloud-utils cloud-utils-growpart
+yum install -y epel-release cloud-init cloud-utils git parted
 ```
 
 #### OpenStack/Alces Portal ready image
