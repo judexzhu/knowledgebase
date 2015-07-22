@@ -5,7 +5,10 @@
  * Guide to building various OpenStack ready images
 
 ## Requirements
- * Any RHEL/Fedora build with cloud-utils cloud-init cloud-utils-growpart installed 
+ * CentOS or Fedora, install base packages to build images with libvirt: 
+```
+yum groupinstall -y 'virtualization'
+```
 
 ## CentOS 
 ### 6.6 
