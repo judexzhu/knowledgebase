@@ -221,6 +221,24 @@ glance image-create \
 
 ### 7.1 
 
++ Run the following on the host to start the install and follow the installation process via text mode
+```
+virt-install --connect=qemu:///system \
+--network=bridge:virbr0 \
+--extra-args="console=tty0 console=ttyS0,115200 serial rd_NO_PLYMOUTH" \
+--name=centos7.1 \
+--disk path=/var/lib/libvirt/images/centos7.1.qcow2,format=qcow2,size=10,cache=none \
+--ram 8192 \
+--vcpus 6 \
+--check-cpu \
+--accelerate \
+--os-type linux \
+--location=http://mirror.i3d.net/pub/centos/7/os/x86_64/ \
+--nographics
+````
+
+
+
 ## Ubuntu
 ### 14.04/trusty
 
