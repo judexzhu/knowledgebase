@@ -24,15 +24,61 @@ virt-install --connect=qemu:///system --network=bridge:virbr0 \
 + Follow the installation over console using text mode, when installation is complete log in using the previously set password and prepare the image for use with Alces Portal and OpenStack
 
 #### Basic OpenStack ready image
++ The following packages are required to create a basic OpenStack ready CentOS 6.6 image with cloud-init and automatically resizing root partition
 ```
 yum install -y epel-release cloud-init cloud-utils git parted
 ```
 
 #### OpenStack/Alces Portal ready image
++ The following packages are required to create an OpenStack/Alces portal ready CentOS 6.6 image, with optional packages starting with the minimal requirements for an interactive desktop session 
 ```
-yum install -y epel-release cloud-init cloud-utils git parted gnome-desktop \
-gnome-panel nautilus xorg-x11-xinit urw-fonts izo libyaml curl fold mktemp tar crontab tmux \
-stat gzip base64 tail xauth xlsclients xterm perl ntp xorg-x11-server-utils sysstat xorg-x11-fonts-misc 
+# Base packages required for the OpenStack image
+yum install -y epel-release \
+               cloud-init \ 
+               cloud-utils \ 
+               git \
+               parted 
+
+# The minimal requirements for a desktop session.
+yum install -y gnome-desktop \
+               gnome-session \
+               gnome-panel \
+               nautilus \
+               xorg-x11-xinit \
+               urw-fonts
+
+# Dependencies for the services tarball we deliver.
+yum install -y \
+    lzo \
+    libyaml 
+
+# Commonly installed utilities that we expect to be installed.
+# xorg-x11-server-utils is included for xrdb.
+# sysstat is included for mpstat for the compute resource monitor.
+# xorg-x11-fonts-misc is included for a decent xterm font.
+yum install -y \
+    curl \
+    fold \
+    mktemp \
+    tar \
+    crontab \
+    stat \
+    gzip \
+    base64 \
+    tail \
+    xauth \
+    xlsclients \
+    xterm \
+    perl \
+    ntp \
+    xorg-x11-server-utils \
+    sysstat \
+    xorg-x11-fonts-misc 
+
+# Entirely optional packages, installed here to complete compatibility
+# with all of Portal's capabilities for interactive sessions.
+yum install -y epel-release
+yum install -y tmux
 ```
 
 + Edit `/boot/grub/menu.lst` and append the following to the kernel line to allow console access through the OpenStack Horizon dashboard
