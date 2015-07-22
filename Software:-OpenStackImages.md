@@ -16,11 +16,16 @@ yum groupinstall -y 'virtualization'
 + Run the following to start the install, pulling from public mirrors 
 
 ```
-virt-install --connect=qemu:///system --network=bridge:virbr0 \
+virt-install --connect=qemu:///system \
+--network=bridge:virbr0 \
 --extra-args="console=tty0 console=ttyS0,115200 serial rd_NO_PLYMOUTH" \
 --name=centos6.6 \
 --disk path=/var/lib/libvirt/images/centos6.6.qcow2,format=qcow2,size=10,cache=none \
---ram 8192 --vcpus 6 --check-cpu --accelerate --os-type linux \
+--ram 8192 \
+--vcpus 6 \
+--check-cpu \
+--accelerate \
+--os-type linux \
 --location=http://mirror.i3d.net/pub/centos/6/os/x86_64/ --nographics
 ```
 
@@ -29,7 +34,11 @@ virt-install --connect=qemu:///system --network=bridge:virbr0 \
 #### Basic OpenStack ready image
 + The following packages are required to create a basic OpenStack ready CentOS 6.6 image with cloud-init and automatically resizing root partition
 ```
-yum install -y epel-release cloud-init cloud-utils git parted
+yum install -y epel-release \
+               cloud-init \
+               cloud-utils \
+               git \
+               parted
 ```
 
 #### OpenStack/Alces Portal ready image
@@ -197,7 +206,17 @@ qemu-img convert -c centos6.6.qcow2 -O qcow2 centos6.6-alces.qcow2
 
 + Add the new image to Glance, and optionally provide some Alces Portal metadata
 ```
-glance image-create --name centos6.6-alces --file centos6.6.final.qcow2 --container-format bare --disk-format qcow2 --min-disk 8 --min-ram 1024 --property architecture=x86_64 --property os_distro=centos --property os_version=6.6 --property alces_process_support=interactive
+glance image-create \
+--name centos6.6-alces \
+--file centos6.6.final.qcow2 \
+--container-format bare \
+--disk-format qcow2 \
+--min-disk 8 \
+--min-ram 1024 \
+--property architecture=x86_64 \
+--property os_distro=centos \
+--property os_version=6.6 \
+--property alces_process_support='["interactive","batch"]'
 ```
 
 ### 7.1 
