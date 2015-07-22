@@ -8,6 +8,7 @@
  * CentOS or Fedora, install base packages to build images with libvirt: 
 ```
 yum groupinstall -y 'virtualization'
+yum install -y libguestfs virt-manager
 ```
 
 ## CentOS 
