@@ -84,7 +84,7 @@ yum install -y epel-release
 yum install -y tmux
 ```
 
-The Alces Portal/OpenStack image requires some changes to the `/etc/cloud/cloud.cfg` file, replace the contents of `/etc/cloud/cloud.cfg` with: 
++ The Alces Portal/OpenStack image requires some changes to the `/etc/cloud/cloud.cfg` file, replace the contents of `/etc/cloud/cloud.cfg` with: 
 ```
 users:
  - default
