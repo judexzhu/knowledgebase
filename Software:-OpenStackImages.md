@@ -202,7 +202,7 @@ shutdown -h now
 
 + Wait for the shutdown process to complete, then pack the image down using `qemu-img convert` then copy the compressed file to the required destination ready for upload to the Glance image service
 ```
-qemu-img convert -c centos6.6.qcow2 -O qcow2 centos6.6-alces.qcow2
+virt-sparsify --compress --format qcow2 centos6.6.qcow2 centos6.6.final.qcow2
 ``` 
 
 + Add the new image to Glance, and optionally provide some Alces Portal metadata
