@@ -22,8 +22,8 @@ virt-install --connect=qemu:///system \
 --extra-args="console=tty0 console=ttyS0,115200 serial rd_NO_PLYMOUTH" \
 --name=centos6.6 \
 --disk path=/var/lib/libvirt/images/centos6.6.qcow2,format=qcow2,size=10,cache=none \
---ram 8192 \
---vcpus 6 \
+--ram 4096 \
+--vcpus 1 \
 --check-cpu \
 --accelerate \
 --os-type linux \
@@ -237,6 +237,10 @@ virt-install --connect=qemu:///system \
 --location=http://mirror.i3d.net/pub/centos/7/os/x86_64/ \
 --nographics
 ````
+
++ Setup process:
+++ Set up a single volume as partition only (no LVM) 
+++ Set up single `alces` user 
 
 
 
