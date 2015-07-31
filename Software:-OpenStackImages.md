@@ -11,6 +11,12 @@ yum groupinstall -y 'virtualization'
 yum install -y libguestfs libguestfs-tools virt-manager libvirt
 ```
 
+CentOS7 Cloud Image:
+```
+yum groupinstall -y 'Virtualization Tools'
+yum install -y libguestfs libguestfs-tools virt-manager libvirt
+```
+
 ## CentOS 
 ### 6.6 
 
