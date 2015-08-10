@@ -17,6 +17,7 @@
     * Integrated Dell Remote Access Controller ([[iDRAC|server/dell/idrac]])
   * HP Proliant
     * SL-series
+      * [[apollo2000|server/hp/apollo/2000]]
     * DL-series
       * [[DL360G9|server/hp/proliant/dl360g9]]
       * [[DL380G9|server/hp/proliant/dl380g9]]
