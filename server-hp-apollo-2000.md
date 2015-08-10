@@ -42,8 +42,8 @@ Server availability -> ASR status -> disabled
 Server availability -> AC power recovery -> Power off
 ```
 
-   10. Press ESC to exit and save changes
-   11. Note configuration details on asset record sheet
+      10. Press ESC to exit and save changes
+      11. Note configuration details on asset record sheet
 
 ***
 
