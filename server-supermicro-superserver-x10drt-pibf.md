@@ -3,6 +3,10 @@
 ## Hardware Overview
 
  * One SuperMicro TwinPro2 chassis can hold up to 4 x SuperServer X10DRT-PIBF node
+ * X10DRT-PIBF supports up to 2 x Intel Xeon E5-2600v3 series CPUs 
+ * 16 DDR4 DIMM slots
+ * 3 x PCIe slots (2 x PCIe x16 + 1 x PCIe x8)
+ * 1 x dedicated IPMI gigabit Ethernet port 
 
 ## Profile 'Cluster Basic'
 
