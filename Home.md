@@ -25,6 +25,9 @@
       * [[C7000|server/hp/proliant/c7000]] 10U Blade chassis
       * [[BL460cG8|server/hp/proliant/bl460cg8]]
       * [[BL460cG9|server/hp/proliant/bl460cg9]]
+  * SuperMicro
+    * SuperServer
+      * [[X10DRT-PIBF|server/supermicro/superserver/x10drt-pibf]]
 
 ***
 ### Storage
