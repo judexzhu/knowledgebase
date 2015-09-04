@@ -14,15 +14,16 @@ The script will then start OZ downloading the image, if there are any problems, 
 
 - Once installed, you will be propmpted to connect to a screen session - you can log in as root and our usual mathematical password. The image is now built with a base installation of the tools required to install Alces Gridware packages via `alces packager`, any other dependencies via `yum`. You can connect to the screen session (which is a `virsh-console` session) as instructed to configure the IP address and connect via SSH to it's IP Address on the DMZ network. 
 
-` $ screen -r alces-imageinit.30712`
+``` $ screen -r alces-imageinit.30712
 
-`CentOS release 6.7 (Final)`
-`Kernel 2.6.32-573.el6.x86_64 on an x86_64`
+CentOS release 6.7 (Final)
+Kernel 2.6.32-573.el6.x86_64 on an x86_64
 
-`localhost.localdomain login: root`
-`Password:`
-`[root@localhost ~]# ifconfig eth0 | grep 'inet addr'`
-          `inet addr:10.101.0.99  Bcast:10.101.255.255  Mask:255.255.0.0`
+localhost.localdomain login: root
+Password:
+[root@localhost ~]# ifconfig eth0 | grep 'inet addr'
+          inet addr:10.101.0.99  Bcast:10.101.255.255  Mask:255.255.0.0`
+```
 
 Now you can SSH to the Image Built:
 
