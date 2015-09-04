@@ -6,6 +6,8 @@
 
 ```$ cd oztemplates && git checkout ruan-openstack```
 
+- The initial variables for where the image should be placed are in `oztemplates/etc/vars` - which may need to be adjusted dependant on the VM host used for building. Hogthrob and Strangepork use `/opt/vm` and `/opt/vm2` respectively.
+
 - To start building an image, enter the `bin` directory, run the `centos6-alces-openstack.sh` script, and name the image.
 
 ```$ ./centos6-alces-openstack.sh ruan-memtester```
@@ -54,5 +56,31 @@ Installation complete.
 
 - Once you have completed the build and installation of any packages to be installed or configured within the image, you should then run the script at `oztemplates/bin/alces-imageinit-cloudify.sh` - this will then proceed to shutdown the image, install all the required `cloud-init` packages and prepare the image for deployment as an openstack instance. At the end the image will be sparsified and compressed to make moving to the remote server easier.
 
-```oztemplates/bin/alces-imageinit-cloudify.sh ruan-memtester```
+```
+oztemplates/bin/alces-imageinit-cloudify.sh ruan-memtester
+Prepare..
+
+===============================================================================
+ Starting Image Cloudify
+===============================================================================
+ruan-memtester
+
+ > Preparing for Cloudification
+    Shutting down VM ... OK
+    Removing from libvirt ... OK
+
+ > Starting Customization
+    Installing packages and doing initial clean ... OK
+
+ > Preparing for Openstack
+    Cleaning Image (virt-sysprep) ... OK
+    Sparsifying & Compressing Image ... OK
+
+===============================================================================
+ Stage 2 is now complete!
+===============================================================================
+Cleanup..
+```
+
+Once this process has finished, you will be left with your compressed qcow image at `/opt/vm/` by default, called `/opt/vm/ruan-memtester.compressed.qcow2` as the example shown.
 
