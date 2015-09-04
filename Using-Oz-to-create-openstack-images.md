@@ -28,7 +28,8 @@ Password:
 
 Now you can SSH to the Image Built:
 
-```$ ssh root@10.101.0.99 
+```
+$ ssh root@10.101.0.99 
 Last login: Fri Sep  4 18:09:32 2015
 [root@localhost ~]# alces packager install apps/memtester/4.3.0
 Installing base/apps/memtester/4.3.0
