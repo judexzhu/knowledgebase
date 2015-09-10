@@ -1,6 +1,6 @@
 - Clone latest git repository containing OZ templates on VM test machine.
 
-```$ git pull https://github.com/alces-software/oztemplates.git```
+```$ git clone https://github.com/alces-software/oztemplates.git```
 
 - Switch to `ruan-openstack` branch.
 
