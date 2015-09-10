@@ -6,6 +6,8 @@
 
 ```$ cd oztemplates && git checkout ruan-openstack```
 
+- You need to ensure you have `oz` installed - for RHEL distributions, it needs the EPEL repository. `yum -y install epel oz` should suffice for CentOS. 
+
 - The initial variables for where the image should be placed are in `oztemplates/etc/vars` - which may need to be adjusted dependant on the VM host used for building. Hogthrob and Strangepork use `/opt/vm` and `/opt/vm2` respectively.
 
 - To start building an image, enter the `bin` directory, run the `centos6-alces-openstack.sh` script, and name the image.
