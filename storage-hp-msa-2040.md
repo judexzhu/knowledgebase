@@ -9,7 +9,7 @@ Field | Information required
 System Name | Hostname, e.g. `hablkary1-1`
 System Contact | `Alces Software`
 System Location | Rack name e.g. `rackA1`
-System Information `hpccluster - scratch storage`
+System Information | `hpccluster - scratch storage`
 
 * Navigate to `System -> Rear` - note down all chassis and controller serial numbers
 * Navigate to `Pools`
