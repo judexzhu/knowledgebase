@@ -5,7 +5,7 @@
 * Using the top navigation bar, click `System: <hostname> -> Set System Information`
 
 Field | Information required
-:---: | ---
+:---: | :---:
 System Name | Hostname, e.g. `hablkary1-1`
 System Contact | `Alces Software`
 System Location | Rack name e.g. `rackA1`
