@@ -40,7 +40,7 @@
         * [[MD3060e|storage/dell/md3060e]] SAS expansion enclosure
         * [[MD34x0|storage/dell/md34x0]] SAS arrays (MD3400, MD3420, MD3460)
         * [[MD3660i|storage/dell/md36x0i]] iSCSI array
-  * HP
+     * HP
         * [[MSA2040|storage/hp/msa2040]] SAS array
   * Panasas
   * Seagate/Xyratex
