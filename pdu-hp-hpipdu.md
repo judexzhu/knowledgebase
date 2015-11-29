@@ -11,9 +11,9 @@
 ## Standard Base Configuration
 * Get a laptop with a serial connector; setup with baud 115200, 8/N/1
 * Connect to "PC" port on LCD display; note that connector on the LCD panel is female 9-pin serial
-* Start minicom/HT/putty on the laptop device
+* Start minicom/HT/putty on the laptop device. The screen will not show anything when connected, even if keys are pressed. 
 * EITHER power on the PDU, OR if it's already on press the RESET button on the LCD panel; resetting the LCD panel should not change the status of managed sockets, but do not perform firmware updates on other hardware while setting up the PDU
-* The serial console will show startup messages (including unit's serial number); press a key when prompted to enter the menu configuration mode
+* The serial console will show startup messages (including unit's serial number); press a key when prompted to enter the menu configuration mode. If you miss the 5-second window to enter the menu, the PDU goes into lock-down mode and must be reset again. 
 * Use the text menu to configure the following:
    * IPv4 IP address, netmask and gateway
    * Enable telnet server
