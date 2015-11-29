@@ -21,10 +21,13 @@
 * When complete, go back to the main menu and press "s" to save settings and reboot
 * After the PDU has rebooted, login using the web GUI and confirm settings are correct
 * For managed PDUs, setup the PDU sockets in the web GUI
+* Use the LCD panel buttons to show power usage on individual PDU bars and sockets. 
 
 
 ## Known issues
 
 * The PDU has manual breaker trips on its top edge. When mounted in the side of the rack, these trips require equipment to be removed from the racks if they need to be accessed. 
 * Individual device switching requires HP branded blue intelligent power cables between PDU and break-out bars
-* HP servers and storage (including HP blade chassis with an intelligent power bar) will be auto-detected by the PDU if they are cabled using blue HP power cables
+* HP servers and storage (including HP blade chassis with an intelligent power bar) will be auto-detected by the PDU if they are cabled using blue HP power cables. Standard power cables will supply power normally, but equipment must be setup manually. 
+* The PDU's serial port goes into lock-down mode if the configuration menu is not entered within the 5-second window on boot up. This means that no output is shown on the serial console when a cable is connected after the PDU has booted, even if keys are pressed - reset the unit using the reset button to see the configuration menu. 
+* PDU break-out bars and LCD screen can become unsynchronised from the main PDU unit. Reset the PDU using the button on the LCD panel if the system becomes confused. 
