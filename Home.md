@@ -16,15 +16,18 @@
       * [[R720|server/dell/rseries/r720]]
     * Integrated Dell Remote Access Controller ([[iDRAC|server/dell/idrac]])
   * HP Proliant
-    * SL-series
-      * [[apollo2000|server/hp/apollo/2000]]
-    * DL-series
-      * [[DL360G9|server/hp/proliant/dl360g9]]
-      * [[DL380G9|server/hp/proliant/dl380g9]]
-    * BL-series
-      * [[C7000|server/hp/proliant/c7000]] 10U Blade chassis
-      * [[BL460cG8|server/hp/proliant/bl460cg8]]
-      * [[BL460cG9|server/hp/proliant/bl460cg9]]
+    * UEFI-BIOS configuration:
+      * All [[HP Gen9 servers|server/hp/gen9-uefi]] (Haswell/Broadwell CPU)
+    * Legacy-BIOS configuration:
+      * SL-series
+        * [[apollo2000|server/hp/apollo/2000]]
+      * DL-series
+        * [[DL360G9|server/hp/proliant/dl360g9]]
+        * [[DL380G9|server/hp/proliant/dl380g9]]
+      * BL-series
+        * [[C7000|server/hp/proliant/c7000]] 10U Blade chassis
+        * [[BL460cG8|server/hp/proliant/bl460cg8]]
+        * [[BL460cG9|server/hp/proliant/bl460cg9]]
   * SuperMicro
     * SuperServer
       * [[X10DRT-PIBF|server/supermicro/superserver/x10drt-pibf]]
