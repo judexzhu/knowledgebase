@@ -64,3 +64,4 @@ Master nodes should be configured to automatically power on after a 60-second de
 ***
 ### Known Issues
  * If the iLO IP address is set from the OS, the iLO may not be contactable over the network until it's been rebooted. Use "ipmitool mc reset cold" on the server from Linux to force the iLO to reset
+ * The B140i (SW) RAID controller needs a Linux driver to work in RAID1 mode, and does not support BIOS legacy boot; use UEFI boot and a customised Linux installation image to use this card in Linux
