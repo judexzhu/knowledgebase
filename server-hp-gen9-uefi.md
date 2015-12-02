@@ -60,3 +60,7 @@ Master nodes should be configured to automatically power on after a 60-second de
   26. Press F10 to save settings; when prompted, press "Y" to confirm, then press "ENTER" ONLY to confirm that the iLO will be rebooted (otherwise the settings will not be saved)
   27. Wait for 30 seconds for iLO to reboot
   28. Reboot the server 
+
+***
+### Known Issues
+ * If the iLO IP address is set from the OS, the iLO may not be contactable over the network until it's been rebooted. Use "ipmitool mc reset cold" on the server from Linux to force the iLO to reset
