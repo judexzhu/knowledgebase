@@ -31,6 +31,32 @@
 ### Upgrading firmware
 
 1. Firmware can be uploaded using the web GUI. Click on the button at the top left of the main HTTPS interface and follow the prompts. 
+2. Disk drive firmware can (sometimes) be upgraded via the GUI. However - the GUI process can be unreliable, so there is another method using FTP. Follow the steps below to upgrade disk drive firmware via the command-line interface:
+
+  * Get your disk firmware file - these are downloadable from HP and usually end in a ".fla" extension. Double check the MD5sum of your file matches the checksum given on HP's website. 
+  * Copy the firmware file to a location that can access the array's controllers over the network. Make sure you have an FTP client installed on that system. 
+  * Login to the disk array via FTP using the "manage" username and password
+```
+ftp blockary1-1c1
+Connected to blockary1-1c1 (10.111.0.171).
+220-Welcome to Pure-FTPd.
+220-You are user number 1 of 5 allowed.
+220-Local time is now 16:42. Server port: 21.
+220-This is a private system - No anonymous login
+220 You will be disconnected after 15 minutes of inactivity.
+Name (blockary1-1c1:root): manage
+331 User manage OK. Password required
+Password:
+230-OK. Current restricted directory is /
+```
+  * Use the "put" command to put your firmware file onto a disk; e.g. if you want to upgrade disks in slots 11 and 12 of enclosure zero, you'd enter:
+```
+ftp> put HP_HUH728080AL5204_C7J0.fla disk:1.11-12
+```
+  * Alternatively, to upgrade all target disks that will accept the new firmware, just use:
+```
+ftp> put HP_HUH728080AL5204_C7J0.fla disk
+```
 
 ***
 ## Known issues
@@ -40,3 +66,4 @@
  * Newly inserted disks (in any slot) are not automatically assigned as spares
  * If a disk is removed and reinserted (or temporarily fails and revives itself again), the array detects that it already has data on and will not use it. Select "clear metadata" from the array GUI main menu to wipe the disk and allow it to be used. 
  * Remove SNMP probing via Nagios is unreliable if probed too often
+ * Known issues with 8TB disks on firmware revision C515; upgrade them to version C7J0 or later before entering production
