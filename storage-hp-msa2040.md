@@ -28,6 +28,15 @@
 14. Modify the IP address on your laptop to match the customer network
 15. Reconnect to the array on new IP to confirm settings
 
+### Reporting errors
+
+  * HP will require logs from the disk array to be sent to them to replace controllers or disks. 
+  * Logs can be downloaded via the web GUI; click on the button in the lower right-hand corner and select "download logs" to get them (takes about 5 minutes). 
+  * Logs can also be downloaded on the command-line via FTP; login to one of the controllers via FTP using the "manage" username and password, and download the logs using the command:
+```
+get logs <local-filename.zip>
+```
+ 
 ### Upgrading firmware
 
 1. Firmware can be uploaded using the web GUI. Click on the button at the top left of the main HTTPS interface and follow the prompts. 
