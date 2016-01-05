@@ -65,5 +65,5 @@ ftp> put HP_HUH728080AL5204_C7J0.fla disk
  * The disk array does not support copy-back (i.e. when a RAID disk fails, the array uses a hot-spare and will not copy the data back to the drive in the original slot location when the broken disk is replaced)
  * Newly inserted disks (in any slot) are not automatically assigned as spares
  * If a disk is removed and reinserted (or temporarily fails and revives itself again), the array detects that it already has data on and will not use it. Select "clear metadata" from the array GUI main menu to wipe the disk and allow it to be used. 
- * Remove SNMP probing via Nagios is unreliable if probed too often
+ * Remote SNMP probing via Nagios is unreliable if probed too often
  * Known issues with 8TB disks on firmware revision C515; upgrade them to version C7J0 or later before entering production
