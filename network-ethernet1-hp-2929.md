@@ -1,11 +1,13 @@
 # HP Networking 2920
-## 48-port 1Gb Ethernet switch
+## 48-port and 24-port 1Gb Ethernet switches
 
 ## Hardware overview
-* 48-port gigabit-Ethernet switch with 4 x SFP+ 1Gb module slots
+* 48-port gigabit-Ethernet switch with 4 x SFP+ 1Gb module slots (2920-48G)
+* 24-port gigabit-Ethernet switch with 4 x SFP+ 1Gb module slots (2920-24G)
 * Single PSU + DC power socket for external PSU
 * Port-to-PSU airflow by default
 * 1Gb ports do not support direct-attach (copper/twinAX) cables
+* Dual rear module slots for DP 10Gb or stacking modules (stacking cables available separately)
 
 ## Standard Base Configuration
 
