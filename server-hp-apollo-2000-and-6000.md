@@ -47,3 +47,7 @@ Server availability -> AC power recovery -> Power off
 
 ***
 
+
+### Known issues
+
+* Apollo 6000 chassis must be populated from right to left with nodes to allow cooling to work properly
