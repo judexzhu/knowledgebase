@@ -16,6 +16,8 @@
       * [[R720|server/dell/rseries/r720]]
     * Integrated Dell Remote Access Controller ([[iDRAC|server/dell/idrac]])
   * HP Proliant
+    * Legacy-BIOS configuration:
+      * All [[HP Gen9 servers|server/hp/gen9-legacy]] (Haswell/Broadwell CPU)
     * UEFI-BIOS configuration:
       * All [[HP Gen9 servers|server/hp/gen9-uefi]] (Haswell/Broadwell CPU)
     * Legacy-BIOS configuration:
