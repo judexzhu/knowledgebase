@@ -6,6 +6,10 @@
  * Also tested working on an AWS Flight cluster
  * See http://slurm.schedmd.com/ for Full details
 
+## Pre-reqs
+ * Enable standard EL7 repos in YUM
+ * Download the latest Slurm source tarball from http://www.schedmd.com/#repos
+
 ## Quick-start installation
 
 * On all nodes:
