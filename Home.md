@@ -9,7 +9,7 @@
       * [[C4130|server/dell/cseries/c4130]]
     * M-series
     * T-series
-      * [[R630|server/dell/tseries/r630]]
+      * [[T630|server/dell/tseries/r630]]
     * R-series
       * [[R420|server/dell/rseries/r420]]
       * [[R430|server/dell/rseries/r430]]
