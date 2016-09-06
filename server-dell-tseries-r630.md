@@ -9,6 +9,7 @@
  * 24 DIMM slots; requires 1 DIMM to boot; max of 1.5T RAM (24 x 64GB); slots 8-16 require CPU2 to be installed; DIMM slot enumeration printed on chassis lid underside and matches PCB printing 
  * Ships with iDRAC8 express (shared IPMI LAN port, no KVM-over-IP) or iDRAC enterprise with dedicated port
  * Graphics cards require GPU installation kit part (power cables for GPU cards); supports active (with fan) cards only
+ * Graphics cards require all fan units to be installed (all fans do not ship with base unit)
 
 ## Profile 'Cluster Slave'
 ### BIOS configuration
@@ -125,41 +126,6 @@ Dell provides tools to perform BIOS and BMC configuration settings from Linux. T
 ```
 
 ***
-### RAID disks and storage
-
-The R630 can be supplied with:
-
- * No RAID controller; supports SATA disks or SSDs, or no disks at all. This configuration required no hardware setup. SAS disks are not supported without a RAID controller. RAID controller slot is empty but cannot be used for anything else. 
- * R630 supports PCI-express SSDs mounted in the front disk bays. These do not require a RAID card. 
- * PERC H330 SAS controller in onboard RAID controller slot; Supports RAID0+1 only - see hardware asset record for RAID setup info.
- * PERC H730 SAS controller in onboard RAID controller slot; includes battery (in dedicated internal slot) and 1GB RAM - PERC H730P controller has 2GB RAM; Supports RAID 0,1,5,6 - see hardware asset record for RAID setup info.
- * Requires Nagios SMART disk monitor is no RAID card is installed. 
- * Requires Nagios RAID monitor if SAS RAID card is installed. 
-
-***
-### Compatible devices
-
-R630 always ships with one of the following NIC daughercards:
- - 4 x 1Gb RJ45 ports, Intel or broadcom
- - 2 x 10Gb SFP+ ports and 2 x 1Gb RJ45 ports, Intel or Broadcom
- - 2 x 10Gb RJ45 and 2 x 1Gb RJ45 ports, Intel or Broadcome
-
-All ports can be configured for PXE and iSCSI boot, and iDRAC can share any port, on the base or a tagged VLAN. 
-
-The following list of hardware is certified for installation:
- * Mellanox QDR and FDB, single and dual-port PCI-express and mez HCA; FDR cards can be factory installed
- * Intel/Qlogic TrueScale QDR Infiniband PCI-express and mez HCA
- * Intel and Broadcom, dual-port 10Gb SFP+ and 10G-baseT (copper) PCI-express and mez cards
- * Quad-port Intel gigabit NIC 
- * 12Gb and 6Gb SAS HBA, FC cards, PERC H830 external RAID card
-
-Some simple rules for installing add-on cards:
- * The 3-PCI slot version has low-profile, half-length slots. Check physical card dimensions before installing
- * In the 2-PCI slot version, the second PCI-express riser does not ship with systems by default; order the riser if you need to fit two PCI cards
- * The system has a dedicated internal RAID card slot which the PERC H330/H730 cards fit into
- * Cards in PCI slots receive hot air from CPU and RAM; check PCI card tolerances before installing
-
-***
 ## Hardware support
 
  * Call Dell on 01344-860456 with the service tag for the machine.
@@ -173,7 +139,6 @@ Fault finding may require a DSET report to be generated. Use the latest availabl
  
  * Firmware upgrade tools may fail to run without various Linux dependencies 
  * Software BIOS setting tools produce inconsistent results 
- * Older iDRAC firmware had memory leaks which caused the entire server to fail after several months of running; this is fixed in recent versions, but the bug has been reintroduced more than once in the past
  * Disks, PSUs and fans are technically hot-swappable (although difficult to reach fans when powered)
  * iDRAC processors can ship with SD cards (called Vflash) which presents as /dev/sda in Linux, causing problems installing an OS; remove these cards if installed from the rear of the chassis, or internally from both sides of the PCI slot riser closest to the PSUs
  * IPMI sensors will fail to detect redundant PSUs properly if iDRAC is not set to "redundant" power; if this happens, login to the iDRAC using a web browser and check the power settings. Older firmware had a bug whereby PSU redundancy would change by itself after many months of running. Mode sometimes needs to be manually set to non-redundant and saved, then set back to redundant mode again before ipmi-sensors will report properly. 
