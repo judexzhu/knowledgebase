@@ -23,9 +23,15 @@ Select finish to return to main BIOS menu
 ```
 4. From the main menu, select 'System BIOS' again.
 5. Make the following changes to the default settings:
+
+ * Choose the network interface card (NIC) you want to PXE boot from. This will either be:
+      1. The onboard 10Gb SFP+ port (listed as onboard NIC XE)
+   or
+      2. A 1Gb port installed in the PCI mez slot (listed as the Mezzanine NIC)
+The NIC you want to PXE boot from must be selected as the first boot device:
 ```
-Boot settings -> Boot BIOS settings -> Boot sequence -> Choose NIC to PXE boot from as device 1
-Boot settings -> Boot BIOS settings -> Boot sequence -> Choose boot HDD as device 2
+Boot settings -> Boot BIOS settings -> BIOS Boot sequence -> Choose NIC to PXE boot from as device 1
+Boot settings -> Boot BIOS settings -> BIOS Boot sequence -> Choose boot HDD as device 2
 ```
 
 If your C6320 has 1Gb network ports in and you will not be using the onboard 10Gb ports, disable them:
