@@ -7,7 +7,7 @@
     * C-series
       * [[C6220|server/dell/cseries/c6220]]
       * [[C4130|server/dell/cseries/c4130]]
-      * [[C6320|server/dell/cseries/c6320]]
+      * [[C6320|server/dell/cseries/6320]]
     * FX-series
       * [[FC430|server/dell/fxseries/fc430]]
     * M-series
