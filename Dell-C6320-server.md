@@ -13,6 +13,20 @@
 
 ***
 ### BIOS configuration
+
+0. If you want to use hardware RAID0/1 on your C6320 to boot from, set that up first. 
+ * Press F2 during boot to enter BIOS menu
+ * Choose 'Device Settings' from the main BIOS menu
+ * Choose the RAID card to configure (usually the only one listed)
+ * Choose the RAID card from the next menu (usually LSI SAS2 MPT or PERC7)
+ * Choose 'Controller Management'
+ * Choose 'Create configuration'
+ * Select your RAID level (usually RAID1 for system disks)
+ * Choose 'Select Physical disks' and choose the drives to include
+ * Select 'Apply changes' and confirm when prompted
+ * Press ESC to exit to the main menu, saving settings when prompted
+ * Continue with BIOS settings as below
+
 1. Power on and press F2 to enter BIOS, note the firmware revisions during boot
 2. Select 'System BIOS' from main menu
 3. Select system defaults
