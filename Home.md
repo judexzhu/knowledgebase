@@ -15,7 +15,7 @@
       * [[T630|server/dell/tseries/r630]]
     * R-series
       * [[R420|server/dell/rseries/r420]]
-      * [[R430|server/dell/rseries/r430]]
+      * [[R430|Dell/R430-server]]
       * [[R515|server/dell/rseries/r515]]
       * [[R630|server/dell/rseries/r630]]
       * [[R720|server/dell/rseries/r720]]
