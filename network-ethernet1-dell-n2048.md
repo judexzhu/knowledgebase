@@ -1,5 +1,5 @@
-# Dell PowerConnect N2048 48-port
-## and N2024 24-port switches
+# Dell PowerConnect N1548/N2048 48-port
+## and N1524/N2024 24-port switches
 
 ## Hardware overview
 * 48-port gigabit-Ethernet switch with 2 x SFP+ 10Gb ports and dual rear 21Gb stacking ports
