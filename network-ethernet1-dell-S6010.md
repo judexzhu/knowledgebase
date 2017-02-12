@@ -1,7 +1,7 @@
 # Dell PowerConnect S6010 40Gb switch
 
 ## Hardware overview
-* 36-port 40Gb Ethernet 1U switch with dual PSU
+* 32-port 40Gb Ethernet 1U switch with dual PSU
 * All but 8 of the 40Gb ports can be split into 4 x 10Gb ports, providing 96 x 10Gb and 8 x 40Gb ports in total
 * Ships with dual PSU as standard
 * Front-to-rear airflow (intake through RJ45 ports, exhaust over PSU), with reverse airflow PSUs/fans available
