@@ -83,6 +83,7 @@
     * [[Dell|pdu/dell/dell]]
   * APC
     * [[APC 8653|pdu/apc/AP8653]]
+    * [[APC 8886|pdu/apc/AP8886]] 3ph 32A monitored PDU
   * HP
     * [[HP Intelligent PDU|pdu/hp/hpipdu]]
 
