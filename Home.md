@@ -66,6 +66,7 @@
       * [[N2000 series|network/ethernet1/dell/n2048]] 1Gb Ethernet switches
       * [[N4000 series|network/ethernet1/dell/n4032]] 10Gb Ethernet switches
       * [[S6000|network/ethernet1/dell/S6000]] 40Gb Ethernet switch
+      * [[S6010|network/ethernet1/dell/S6010]] 40Gb Ethernet switch
     * HP
       * [[HP2920|network/ethernet1/hp/2929]] 1Gb 48-port switch
       * [[HP5900|network/ethernet1/hp/5900]] 10Gb 48-port switch with QSFP ports
