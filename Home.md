@@ -75,6 +75,7 @@
     * Qlogic/Intel
       * [[(QL)12200 and 12300|network/infinibandQ/intel/12200]]
     * Mellanox
+      * [[EDR Switch-IB SB7800|network/infiniband/mellanox/sb7800]]
 
 ***
 ### Power distribution units
