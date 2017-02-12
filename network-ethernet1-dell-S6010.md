@@ -1,4 +1,4 @@
-# Dell PowerConnect S6000 40Gb switch
+# Dell PowerConnect S6010 40Gb switch
 
 ## Hardware overview
 * 36-port 40Gb Ethernet 1U switch with dual PSU
