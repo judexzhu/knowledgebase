@@ -63,4 +63,4 @@ show version
 
 ***
 ## Known issues
-* Fan/PSU units available in forward and reverse airflow; enable you order the right ones - for rear-cabled Infiniband, airflow should be PSU-to-ports
+* Fan/PSU units available in forward and reverse airflow; ensure you order the right ones - for rear-cabled Infiniband, airflow should be PSU-to-ports
