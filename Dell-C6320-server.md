@@ -48,11 +48,7 @@ Boot settings -> Boot BIOS settings -> BIOS Boot sequence -> Choose NIC to PXE b
 Boot settings -> Boot BIOS settings -> BIOS Boot sequence -> Choose boot HDD as device 2
 ```
 
-If your C6320 has 1Gb network ports in and you will not be using the onboard 10Gb ports, disable them:
-```
-Integrated devices -> Embedded NIC 1+2 -> Disabled (OS)
-```
-
+Make the following settings:
 ```
 Serial communication -> serial communication = ON via COM2
 Serial communication -> serial port address = device1=COM1, device2=COM2
@@ -63,6 +59,13 @@ System Performance -> Select the "Performance" profile
 ```
 System Security -> Set AC power recovery to "OFF"
 ```
+
+**If** your C6320 has 1Gb network ports in and you will not be using the onboard 10Gb ports, you can disable them by making this setting: 
+```
+Integrated devices -> Embedded NIC 1+2 -> Disabled (OS)
+```
+
+
 Press TAB to highlight the FINISH button and press return; save and exit to main menu
 
 
